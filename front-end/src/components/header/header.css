@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display&display=swap');
 
+
+
+header {
+    background-image: url("./skyline.png");
+    background-size: cover;
+    height: 30vh;
+}
 .menu {
    position: relative;
    display: flex; 
@@ -8,13 +15,10 @@
    justify-content: space-between; 
    padding: 20px; 
    margin: 0;
-   background-color: #eee4d2;
-   border-radius: 20px;
 }
 
 .header-logo {
     width: 200px;
-    /* position: absolute;  */
     top: 0px;
     left: 0px; 
 }
