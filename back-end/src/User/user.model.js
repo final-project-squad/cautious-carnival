@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryotjs')
 
-const userScheme = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -20,7 +20,7 @@ const userScheme = new mongoose.Schema({
     }
 })
 
-userScheme.statics.findByCredentials = async (email,password) =>{
+userSchema.statics.findByCredentials = async (email,password) =>{
     const user = await User.findone({email});
     if (!user){
         throw new Error('unable to login')
@@ -33,7 +33,7 @@ userScheme.statics.findByCredentials = async (email,password) =>{
     return user
 }
 
-userScheme.methods.generateAuthToken = async function () {
+userSchema.methods.generateAuthToken = async function () {
     const token = jwt.sign({_id: this._id}, process.env.Secret,{});
     this.tokens.push();
     return token;

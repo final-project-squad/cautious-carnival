@@ -10,7 +10,7 @@ exports.getUser = async (req,res) => {
 
 exports.createUser = async (res,req) => {
     try {
-        const user = new User(req.)
+        const user = new User(req.body)
     } catch (error) {
         
     }
