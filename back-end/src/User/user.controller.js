@@ -11,7 +11,7 @@ exports.getUser = async (req,res) => {
 exports.createUser = async (res,req) => {
     try {
         const user = new User(req.body)
-    } catch (error) {
-        
+    } catch (error) {        
+        res.status(500).send({message:"User not not created"})
     }
 }
