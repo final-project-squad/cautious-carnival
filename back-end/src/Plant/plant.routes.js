@@ -1,10 +1,10 @@
-const { router } = require("express");
-const { getUser } = require("./plant.controller");
+const express = require("express");
+const { getPlant } = require("./plant.controller");
 const { user } = require("./plant.model");
-const { auth } = require("../middleware")
-const plantRouter = Router();
+// const { auth } = require("../middleware")
+const plantRouter = express.Router();
 
-plantRouter.get("/plant", auth, getUser);
+plantRouter.get("/plant", getPlant);
 plantRouter.post("/plant");
 
 module.exports = {
