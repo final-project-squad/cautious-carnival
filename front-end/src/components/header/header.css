@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display&display=swap');
 
 
-
+/* 
 header {
     background-image: url("./skyline.png");
     background-size: cover;
     height: 30vh;
-}
+} */
 
 .menu {
    position: relative;
@@ -16,6 +16,8 @@ header {
    justify-content: space-between; 
    padding: 20px; 
    margin: 0;
+   border-bottom: solid #888d68;
+
 }
 
 .header-logo {
@@ -43,9 +45,8 @@ a {
     font-family: 'Playfair Display', serif;
     font-size: 2.5em;
     text-align: center;
-    background-color: #888d68;
-    border-radius: 20px;
     padding-bottom:5px;
     margin-top: 5px;
-    color: #eee4d2;
-}
+    color:#888d68;
+    border-bottom: solid #888d68;
+} 
