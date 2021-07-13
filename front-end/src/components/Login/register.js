@@ -1,6 +1,7 @@
 /* to register users*/
-import { useState} from "react";
+import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import React from 'react';
 
 const Register = (props) => {
   const [name, setname] = useState();
@@ -22,7 +23,7 @@ const Register = (props) => {
       const data = await response.json();
       // setResult(data);
       localStorage.setItem("MyToken", data.token);
-      alert("user Created")
+      alert("user Created");
     } catch (error) {
       console.log("an error ocoured in front-end login/register");
     }
@@ -34,7 +35,12 @@ const Register = (props) => {
   };
 
   return (
-    <Modal>
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           Login / Register
@@ -54,16 +60,16 @@ const Register = (props) => {
           <button type="submit">Login</button>
         </form>
         {/* <p>{result.map(result => <div>{result.object}, {result.date}</div>)}</p> */}
-            </Modal.Body>
+      </Modal.Body>
       <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
     </Modal>
   );
 };
 
 function PopUpRegister() {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <>
