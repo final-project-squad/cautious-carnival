@@ -8,8 +8,8 @@ function Main() {
     return (
 
         <div>
-           {/*  <Header /> */}
-            Testing Main
+            <Header />
+
           {/*   <Footer /> */}
         </div>
     )
