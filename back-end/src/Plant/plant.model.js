@@ -1,32 +1,31 @@
 const mongoose = require('mongoose')
-const jwt = require('jsonwebtoken')
 
-const plantSchema = new mongoose.Schema({
+const PlantSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
-    Maintenance:{
+    maintenance:{
         type:String
     },
     watering: {
         type: Boolean
     },
-    Lighting :{
+    lighting :{
         type: Boolean
     },
-    PetFriendly :{
+    petFriendly :{
         type: Boolean
     },
     indoor :{
         type:Boolean
     },
-    Notes :{
+    notes :{
         type: String
     }
 })
 
-const Plant = mongoose.model('Plant',plantSchema);
+const Plant = mongoose.model('Plant',PlantSchema);
 
 module.exports = { 
     Plant
