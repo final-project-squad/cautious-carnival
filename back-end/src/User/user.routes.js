@@ -14,16 +14,21 @@ userRouter.post("/", async (req, res) => {
       password: req.body.password,
       token: token,
     });
+    // localStorage.setItem('MyToken', token)
     res.status(200).send(user);
   } catch (error) {
     res.status(500).send("error in the user post function in user.routes");
   }
 });
 
+// userRouter.post("/login"
+
+// )
+
 userRouter.get("/",  async (req,res) => {
   try {
-    const user = await User.find({})
-    console.log(user); 
+    console.log(req.body)
+    const user = await User.findOne({})
       res.status(200).send(user)
   } catch (error) {
       res.status(500).send({message:"User not found"})

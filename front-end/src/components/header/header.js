@@ -2,6 +2,7 @@ import React from 'react';
 // import Logo from './headerImage.png';
 import { BrowserRouter as Router, Link } from "react-router-dom"
 import "./header.css"
+import PopUp from './Modal';
 
 const Header = () => {
     return (
@@ -11,7 +12,7 @@ const Header = () => {
                 <div className={"navbar"}>
                     <Router>
                         <Link className="link" to="/register">
-                            Register
+                            Register <PopUp/>
                         </Link>
                         <Link className="link" to="/login">
                             Log In
