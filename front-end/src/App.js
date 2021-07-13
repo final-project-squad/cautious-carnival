@@ -1,21 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from "./components/header/header"
-import Footer from './components/footer/footer';
+import React from "react"
+import {BrowserRouter as Router, Route} from "react-router-dom"
+import Home from "./components/home/Home"
+import "./App.css"
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-          <Header />
+    <Router>
 
+      <Route path="/" exact>
+        <Home />
+      </Route>
 
+      <Route path="/page-name">
+        {/* <page-name /> */}
+      </Route>
 
-          
-          <Footer />
-      </header>
-    </div>
-  );
+      <Route path="/about">
+     {/*    <About /> */}
+      </Route>
+      
+    </Router>
+  )
 }
 
-export default App;
+export default App
