@@ -1,0 +1,19 @@
+const {Plant} = require('./plant.model')
+
+
+exports.getPlant = async (req,res) => {
+    try {
+        const plants = await Plant.find({});
+        res.status(200).json(plants)
+    } catch (error) {
+        res.status(500).send({message:"Plant not found"})
+    }
+}
+
+exports.createPlant = async (res,req) => {
+    try {
+        const plant = new Plant(req.body)
+    } catch (error) {        
+        res.status(500).send({message:"Plant not created"})
+    }
+}
