@@ -10,7 +10,6 @@ function Main() {
         <div>
             <Header />
             Testing Main
-          {/*   <Footer /> */}
         </div>
     )
 }
