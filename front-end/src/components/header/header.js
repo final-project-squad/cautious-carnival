@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom"
 
 import "./header.css"
-import PopUp from './Modal';
+import PopUp from '../Login/register';
 
 
 const Header = () => {

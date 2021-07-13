@@ -1,12 +1,12 @@
 /* to register users*/
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Button, Modal } from "react-bootstrap";
 
-const Register = () => {
+const Register = (props) => {
   const [name, setname] = useState();
   const [password, setPassword] = useState();
   const [email, setemail] = useState();
-  const [user, setResult] = useState([]);
+  // const [user, setResult] = useState([]);
 
   const fetchLogin = async (name, email, password) => {
     const response = await fetch("http://localhost:5000/user/register", {
@@ -20,7 +20,7 @@ const Register = () => {
     });
     try {
       const data = await response.json();
-      setResult(data);
+      // setResult(data);
       localStorage.setItem("MyToken", data.token);
       alert("user Created")
     } catch (error) {
@@ -40,7 +40,7 @@ const Register = () => {
           Login / Register
         </Modal.Title>
       </Modal.Header>
-      <modal.body>
+      <Modal.Body>
         <form onSubmit={getLogin}>
           <label>name:</label>
           <input onChange={(e) => setname(e.target.value)} />
@@ -54,7 +54,7 @@ const Register = () => {
           <button type="submit">Login</button>
         </form>
         {/* <p>{result.map(result => <div>{result.object}, {result.date}</div>)}</p> */}
-            </modal.body>
+            </Modal.Body>
       <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
@@ -63,7 +63,7 @@ const Register = () => {
 };
 
 function PopUp() {
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <>
@@ -71,10 +71,10 @@ function PopUp() {
         More Information
       </Button>
 
-      <ModalWindow
+      <Register
         show={modalShow}
         onHide={() => setModalShow(false)}
-        item={item}
+        // item={item}
       />
     </>
   );
