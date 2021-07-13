@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './temp-logo.png';
+// import Logo from './headerImage.png';
 import { BrowserRouter as Router, Link } from "react-router-dom"
 import "./header.css"
 
@@ -25,7 +25,7 @@ const Header = () => {
                     </Router>
                 </div>
             </div>
-            {/* <p>Gardenless Greenery for the Concrete Jungle</p> */}
+            <p>Gardenless Greenery for the Concrete Jungle</p>
         </div>
     )
 }

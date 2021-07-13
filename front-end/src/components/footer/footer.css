@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display&display=swap');
+
+.footer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    text-align: center;
+    padding-bottom:5px;
+    margin-top: 5px;
+    color:#888d68;
+    border-bottom: solid #888d68;
+    border-top: solid #888d68;
+} 
