@@ -62,13 +62,13 @@ const Register = (props) => {
   );
 };
 
-function PopUp() {
+function PopUpRegister() {
   const [modalShow, setModalShow] = useState(false);
 
   return (
     <>
       <Button variant="info" size="sm" onClick={() => setModalShow(true)}>
-        More Information
+        Register / Login
       </Button>
 
       <Register
@@ -80,4 +80,4 @@ function PopUp() {
   );
 }
 
-export default PopUp;
+export default PopUpRegister;
