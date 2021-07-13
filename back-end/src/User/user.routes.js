@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken")
 
 
 userRouter.post("/", async (req, res) => {
+  console.log("test")
    try {
     const token = jwt.sign({ name: req.body.name }, process.env.SECRET)
     const user = await User.create({
@@ -28,7 +29,7 @@ userRouter.post("/", async (req, res) => {
 userRouter.get("/",  async (req,res) => {
   try {
     console.log(req.body)
-    const user = await User.findOne({})
+    const user = await User.find({})
       res.status(200).send(user)
   } catch (error) {
       res.status(500).send({message:"User not found"})
