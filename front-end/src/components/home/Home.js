@@ -12,19 +12,25 @@ function Home() {
 
                 <div className="title-top">
                     <div>
-                        <span>ePlanta</span>
-                        <span>Meet your new best bud</span>
+                        <span>urban garden</span>
+                        <span>gardenless greenery</span>
                     </div>
                 </div>
 
                 <div className="title-bottom">
                     <div>
-                        <Link className="link" to="/">
-                            Enter
+                        <Link className="link" to="/main">
+                            enter
                         </Link>
                     </div>
                 </div>
 
+            </div>
+
+            <div>
+                <Link className="link login" to="/">
+                    Log in
+                </Link>
             </div>
 
         </div>
