@@ -13,23 +13,31 @@ const Header = () => {
             <div className={"menu"}>
                 {/* <img className={"header-logo"} src={Logo} alt="website logo" /> */}
                 <div className={"navbar"}>
-                    <Router>
-                        <Link className="link" to="/register">
-                            <PopUpRegister />
-                        </Link>
-                        <Link className="link" to="/login">
-                            Log In
-                        </Link>
-                        <Link className="link" to="/plantsearch">
-                            Plant Search
-                        </Link>
-                        <Link className="link" to="/add">
-                            Add a Plant
-                        </Link>
-                    </Router>
+
+                    <div className="nabvar-links">
+                        <Router>
+                        
+                            <Link className="link nabvar-item" to="/register">
+                                <PopUpRegister />
+                            </Link>
+
+                            <Link className="link nabvar-item" to="/login">
+                                Log In
+                            </Link>
+
+                            <Link className="link nabvar-item" to="/plantsearch">
+                                Plant Search
+                            </Link>
+
+                            <Link className="link nabvar-item" to="/add">
+                                Add a Plant
+                            </Link>
+                    
+                        </Router>
+                    </div>
                 </div>
             </div>
-            <p>Gardenless Greenery for the Concrete Jungle</p>
+            <p className="sub-header">Gardenless Greenery for the Concrete Jungle</p>
         </div>
     )
 }
