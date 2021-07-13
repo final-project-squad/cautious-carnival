@@ -1,9 +1,10 @@
 import React from 'react';
 // import Logo from './headerImage.png';
 import { BrowserRouter as Router, Link } from "react-router-dom"
+// import { Button, Modal } from 'react-bootstrap';
 
 import "./header.css"
-import PopUp from './Modal';
+import PopUpRegister from '../Login/register';
 
 
 const Header = () => {
@@ -14,7 +15,7 @@ const Header = () => {
                 <div className={"navbar"}>
                     <Router>
                         <Link className="link" to="/register">
-                            Register <PopUp/>
+                            <PopUpRegister />
                         </Link>
                         <Link className="link" to="/login">
                             Log In

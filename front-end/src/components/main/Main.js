@@ -1,6 +1,6 @@
 import React from "react"
 /* import {Link} from "react-router-dom" */
-import Header from "../header/Header"
+import Header from "../header/header" 
 import "./Main.css"
 
 function Main() {
@@ -9,8 +9,7 @@ function Main() {
 
         <div>
             <Header />
-
-          {/*   <Footer /> */}
+            Testing Main
         </div>
     )
 }

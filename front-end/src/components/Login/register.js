@@ -1,12 +1,13 @@
 /* to register users*/
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
+import React from 'react';
 
-const Register = () => {
+const Register = (props) => {
   const [name, setname] = useState();
   const [password, setPassword] = useState();
   const [email, setemail] = useState();
-  const [user, setResult] = useState([]);
+  // const [user, setResult] = useState([]);
 
   const fetchLogin = async (name, email, password) => {
     const response = await fetch("http://localhost:5000/user/register", {
@@ -20,9 +21,9 @@ const Register = () => {
     });
     try {
       const data = await response.json();
-      setResult(data);
+      // setResult(data);
       localStorage.setItem("MyToken", data.token);
-      alert("user Created")
+      alert("user Created");
     } catch (error) {
       console.log("an error ocoured in front-end login/register");
     }
@@ -34,13 +35,18 @@ const Register = () => {
   };
 
   return (
-    <Modal>
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           Login / Register
         </Modal.Title>
       </Modal.Header>
-      <modal.body>
+      <Modal.Body>
         <form onSubmit={getLogin}>
           <label>name:</label>
           <input onChange={(e) => setname(e.target.value)} />
@@ -54,30 +60,30 @@ const Register = () => {
           <button type="submit">Login</button>
         </form>
         {/* <p>{result.map(result => <div>{result.object}, {result.date}</div>)}</p> */}
-            </modal.body>
+      </Modal.Body>
       <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
     </Modal>
   );
 };
 
-function PopUp() {
+function PopUpRegister() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <>
       <Button variant="info" size="sm" onClick={() => setModalShow(true)}>
-        More Information
+        Register / Login
       </Button>
 
-      <ModalWindow
+      <Register
         show={modalShow}
         onHide={() => setModalShow(false)}
-        item={item}
+        // item={item}
       />
     </>
   );
 }
 
-export default PopUp;
+export default PopUpRegister;
