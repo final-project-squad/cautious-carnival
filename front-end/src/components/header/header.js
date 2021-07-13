@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './temp-logo.png';
+import Logo from './Logo.png';
 import { BrowserRouter as Router, Link } from "react-router-dom"
 import "./header.css"
 
@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div className={"header"}>
             <div className={"menu"}>
-                {/* <img className={"header-logo"} src={Logo} alt="website logo" /> */}
+                <img className={"header-logo"} src={Logo} alt="website logo" />
                 <div className={"navbar"}>
                     <Router>
                         <Link className="link" to="/register">
@@ -25,7 +25,7 @@ const Header = () => {
                     </Router>
                 </div>
             </div>
-            {/* <p>Gardenless Greenery for the Concrete Jungle</p> */}
+            <p>Gardenless Greenery for the Concrete Jungle</p>
         </div>
     )
 }
