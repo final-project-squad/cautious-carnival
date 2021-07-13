@@ -9,10 +9,10 @@ const PlantSchema = new mongoose.Schema({
         type:String
     },
     watering: {
-        type: Boolean
+        type: String
     },
     lighting :{
-        type: Boolean
+        type: String
     },
     petFriendly :{
         type: Boolean
