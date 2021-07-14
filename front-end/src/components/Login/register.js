@@ -1,9 +1,8 @@
 /* to register users*/
 import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
 import React from 'react';
 
-const Register = (props) => {
+const Register = () => {
   const [name, setname] = useState();
   const [password, setPassword] = useState();
   const [email, setemail] = useState();
@@ -30,60 +29,33 @@ const Register = (props) => {
   };
 
   const getLogin = (e) => {
+    console.log("hope")
     e.preventDefault();
     fetchLogin(name, email, password);
   };
 
+  const register = (e) => {
+    console.log("register")
+  };
+
   return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Login / Register
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <form onSubmit={getLogin}>
+  <div>
+    <form onSubmit={getLogin}>
           <label>name:</label>
-          <input onChange={(e) => setname(e.target.value)} />
+          <input onChange={(e) => setname(e.target.value)} value={name} />
           <br />
           <label>email:</label>
-          <input onChange={(e) => setemail(e.target.value)} />
+          <input onChange={(e) => setemail(e.target.value)} value={email} />
           <br />
           <label>password:</label>
-          <input onChange={(e) => setPassword(e.target.value)} />
+          <input onChange={(e) => setPassword(e.target.value)} value={password} />
           <br />
           <button type="submit">Login</button>
         </form>
-        {/* <p>{result.map(result => <div>{result.object}, {result.date}</div>)}</p> */}
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
+        <button onClick={register}>Register</button>
+        </div>
+
   );
 };
 
-function PopUpRegister() {
-  const [modalShow, setModalShow] = React.useState(false);
-
-  return (
-    <>
-      <Button variant="info" size="sm" onClick={() => setModalShow(true)}>
-        Register / Login
-      </Button>
-
-      <Register
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        // item={item}
-      />
-    </>
-  );
-}
-
-export default PopUpRegister;
+export default Register;

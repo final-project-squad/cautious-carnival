@@ -3,12 +3,14 @@ import React from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom"
 // import { Button, Modal } from 'react-bootstrap';
 
+
 import "./header.css"
-import PopUpRegister from '../Login/register';
+import Register from '../Login/register';
 
 
 const Header = () => {
-    return (
+    return (<div>
+        <Register />
         <div className={"header"}>
             <div className={"menu"}>
                 {/* <img className={"header-logo"} src={Logo} alt="website logo" /> */}
@@ -18,7 +20,7 @@ const Header = () => {
                         <Router>
                         
                             <Link className="link nabvar-item" to="/register">
-                                <PopUpRegister />
+                                
                             </Link>
 
                             <Link className="link nabvar-item" to="/about">
@@ -38,7 +40,7 @@ const Header = () => {
                 </div>
             </div>
             <p className="sub-header">Gardenless Greenery for the Concrete Jungle</p>
-        </div>
+            </div></div>
     )
 }
 
