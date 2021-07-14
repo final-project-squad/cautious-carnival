@@ -1,5 +1,6 @@
-import React from "react";
-import Header from "../header/header";
+
+import React from "react"
+import Header from "../header/header"
 /* import {Link} from "react-router-dom" */
 import "./About.css";
 
@@ -7,7 +8,6 @@ function About() {
   return (
     <div className={"aboutheader"}>
       <Header />
-
       <p>
         We want to see the major cities turn green, whether that be on balconies,
         rooftops or windowsils.
