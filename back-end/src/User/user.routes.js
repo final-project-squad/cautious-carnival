@@ -4,9 +4,8 @@ const { auth } = require("../middleware")
 const userRouter = express.Router();
 const jwt = require("jsonwebtoken")
 
-
 userRouter.post("/", async (req, res) => {
-  console.log("test")
+  
    try {
     const token = jwt.sign({ name: req.body.name }, process.env.SECRET)
     const user = await User.create({
