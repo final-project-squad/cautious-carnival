@@ -1,6 +1,7 @@
 /* to register users*/
 import { useState } from "react";
 import React from 'react';
+import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
 const Register = () => {
   const [name, setname] = useState();
@@ -39,20 +40,23 @@ const Register = () => {
   };
 
   return (
-  <div>
+  <div className="form-login">
     <form onSubmit={getLogin}>
-          <label>name:</label>
+
+          <HighlightOffIcon className="close-icon"/>
+
+          <label>name</label>
           <input onChange={(e) => setname(e.target.value)} value={name} />
           <br />
-          <label>email:</label>
+          <label>email</label>
           <input onChange={(e) => setemail(e.target.value)} value={email} />
           <br />
-          <label>password:</label>
+          <label>password</label>
           <input onChange={(e) => setPassword(e.target.value)} value={password} />
           <br />
-          <button type="submit">Login</button>
+          <button type="submit" className="btt-login">Login</button>
         </form>
-        <button onClick={register}>Register</button>
+        <button onClick={register} className="btt-reg">Register</button>
         </div>
 
   );
