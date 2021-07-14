@@ -21,8 +21,8 @@ const Header = () => {
                                 <PopUpRegister />
                             </Link>
 
-                            <Link className="link nabvar-item" to="/login">
-                                Log In
+                            <Link className="link nabvar-item" to="/about">
+                                About
                             </Link>
 
                             <Link className="link nabvar-item" to="/plantsearch">
