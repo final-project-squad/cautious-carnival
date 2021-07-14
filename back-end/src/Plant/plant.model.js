@@ -15,20 +15,20 @@ const plantSchema = new mongoose.Schema({
         type: String
     },
     petFriendly :{
-        type: Boolean
+        type: String
     },
     indoor :{
-        type:Boolean
+        type: Boolean
     },
     notes :{
         type: String
     }
 })
 
-const Plant = mongoose.model('Plant',plantSchema);
+const Plant = mongoose.model('plant',plantSchema);
 
 
 module.exports = { 
     Plant
 }
-
+ 
