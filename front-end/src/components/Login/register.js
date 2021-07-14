@@ -10,6 +10,7 @@ const Register = () => {
   // const [user, setResult] = useState([]);
 
   const fetchLogin = async (name, email, password) => {
+    
     const response = await fetch("http://localhost:5000/user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -19,6 +20,7 @@ const Register = () => {
         password: password,
       }),
     });
+    
     try {
       const data = await response.json();
       // setResult(data);

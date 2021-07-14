@@ -275,25 +275,6 @@ router.get("/", async (req, res) => {
       },
     ];
 
-    // const userArray = [
-    //   { name: "Lance", email: "l@book", password:"password", plants: [2, 3] },
-    //   { name: "Jeremy", email: "j@eremy",  password:"password",plants: [1, 4, 7] },
-    // ];
-
-    // userRouter.post("/addplant", async (req, res) => {
-        
-    //     console.log(plant1);
-    //     if (!movie) {
-    //       res.status(404).send("movie dosn't exsist");
-    //     } else {
-    //       await User.updateOne(
-    //         { name: req.body.username },
-    //         { $addToSet: { plants: plant._id } }
-    //       );    
-    //       res.status(201).send("added");
-    //     }
-    //   });
-
       const CreateUserArray = async () => {
           
         const plant1 = await Plant.findOne({ name: "Peace Lily Plant" });
