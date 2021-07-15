@@ -10,6 +10,7 @@ import Register from '../Login/register';
 import AddPlant from '../Plants/addPlant';
 import About from '../about/About';
 import { Divider } from '@material-ui/core';
+/* import AddPlant from '../Plants/addPlant'; */
 
 const Header = () => {
     const [showPop, setShowPop] = useState(false);
@@ -48,7 +49,6 @@ const Header = () => {
                     <div className="nabvar-links">
                         <Router>
                         
-                            <div className="link navbar-item" onClick={() => navigatePop()}>Log In</div>
 
                             <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
                                 About
@@ -61,7 +61,11 @@ const Header = () => {
                             <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
                                 Add a Plant
                             </div>
-                    
+                                                </Link>
+
+                            <div className="link nabvar-item" onClick={() => navigatePop()}>
+                                Log In
+                            </div>
                         </Router>
                     </div>
                 </div>
