@@ -10,6 +10,7 @@ import Register from '../Login/register';
 import AddPlant from '../Plants/addPlant';
 import About from '../about/About';
 import { Divider } from '@material-ui/core';
+import FetchPlants from '../Plants/PlantSearch';
 /* import AddPlant from '../Plants/addPlant'; */
 
 const Header = () => {
@@ -17,6 +18,7 @@ const Header = () => {
     const [page, setPage] = useState(); 
     const addPlant = "add";
     const aboutPage = "about";
+    const plantSearch = "search";
 
     const navigatePop = () => {
         setShowPop(true);
@@ -42,6 +44,10 @@ const Header = () => {
         return <About />
     }
 
+    const renderSearch = () => {
+        return <FetchPlants />
+    }
+
     return (<div>
         <div className={"header"}>
             <div className={"menu"}>
@@ -54,7 +60,7 @@ const Header = () => {
                                 About
                             </div>
 
-                            <div className="link nabvar-item">
+                            <div className="link nabvar-item" onClick={() => navigatePage(plantSearch)}>
                                 Plant Search
                             </div>
 
@@ -74,6 +80,7 @@ const Header = () => {
             {showPop ? renderPop() : renderMain()}
             {page === addPlant && renderAddPlant()}
             {page === aboutPage && renderAbout()}
+            {page === plantSearch && renderSearch()}
             </div>
     )
 }
