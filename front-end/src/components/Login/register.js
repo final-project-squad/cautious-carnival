@@ -3,10 +3,12 @@ import { useState } from "react";
 import React from 'react';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 
-const Register = () => {
+const Register = ({setShowPop}) => {
+  console.log("hitting register");
   const [name, setname] = useState();
   const [password, setPassword] = useState();
   const [email, setemail] = useState();
+
   // const [user, setResult] = useState([]);
 
   const fetchLogin = async (name, email, password) => {
@@ -42,10 +44,9 @@ const Register = () => {
   };
 
   return (
-  <div className="form-login">
+    <div className="form-login">
     <form onSubmit={getLogin}>
-
-          <HighlightOffIcon className="close-icon"/>
+          <HighlightOffIcon className="close-icon" onClick={() => setShowPop(false)}/>
 
           <label>name</label>
           <input onChange={(e) => setname(e.target.value)} value={name} />
@@ -60,7 +61,6 @@ const Register = () => {
         </form>
         <button onClick={register} className="btt-reg">Register</button>
         </div>
-
   );
 };
 

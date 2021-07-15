@@ -3,7 +3,7 @@
 
 .footer p {
     font-family: 'Playfair Display', serif;
-    font-size: 2.5em;
+    font-size: 1.5em;
     text-align: center;
     padding-bottom:5px;
     margin-top: 5px;
@@ -11,3 +11,21 @@
     border-bottom: solid #888d68;
     border-top: solid #888d68;
 } 
+
+.st0 {
+    fill:none;
+    stroke:#BAC284;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    animation: dash 4s linear forwards;
+    animation-delay: 2s;
+}
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
