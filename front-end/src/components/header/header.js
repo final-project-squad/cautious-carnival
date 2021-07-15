@@ -61,7 +61,6 @@ const Header = () => {
                             <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
                                 Add a Plant
                             </div>
-                                                </Link>
 
                             <div className="link nabvar-item" onClick={() => navigatePop()}>
                                 Log In
