@@ -56,10 +56,9 @@ const AddPlant = () => {
   };
 
   return (
-    <div className="form-login">
+    <div className="form-addplant">
       <form onSubmit={postPLant}>
-        <HighlightOffIcon className="close-icon" />
-
+        {/* <HighlightOffIcon className="close-icon" /> */}
         <label>name</label>
         <input onChange={(e) => setname(e.target.value)} value={name} />
         <br />
@@ -81,8 +80,8 @@ const AddPlant = () => {
         <label>notes</label>
         <input onChange={(e) => setnotes(e.target.value)} value={notes} />
         <br />
-        <button type="submit" className="btt-login">
-          Login
+        <button type="submit" className="btt-add">
+          Add to Database
         </button>
       </form>
     </div>

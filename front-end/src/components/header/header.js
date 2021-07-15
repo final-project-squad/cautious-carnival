@@ -8,12 +8,21 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 import "./header.css"
 import Register from '../Login/register';
 import AddPlant from '../Plants/addPlant';
+import About from '../about/About';
+import { Divider } from '@material-ui/core';
 
 const Header = () => {
     const [showPop, setShowPop] = useState(false);
+    const [page, setPage] = useState(); 
+    const addPlant = "add";
+    const aboutPage = "about";
 
-    const navigateTo = () => {
+    const navigatePop = () => {
         setShowPop(true);
+    }
+
+    const navigatePage = (nextPage) => {
+        setPage(nextPage)
     }
 
     const renderPop = () => {
@@ -24,27 +33,34 @@ const Header = () => {
         return <div></div>
     }
 
+    const renderAddPlant = () => {
+        return <AddPlant />
+    }
+
+    const renderAbout = () => {
+        return <About />
+    }
+
     return (<div>
-        <AddPlant />
         <div className={"header"}>
             <div className={"menu"}>
                 <div className={"navbar"}>
                     <div className="nabvar-links">
                         <Router>
                         
-                            <button className="link navbar-item" onClick={() => navigateTo()}>Log In</button>
+                            <div className="link navbar-item" onClick={() => navigatePop()}>Log In</div>
 
-                            <Link className="link nabvar-item" to="/about">
+                            <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
                                 About
-                            </Link>
+                            </div>
 
-                            <Link className="link nabvar-item" to="/plantsearch">
+                            <div className="link nabvar-item">
                                 Plant Search
-                            </Link>
+                            </div>
 
-                            <Link className="link nabvar-item" to="/add">
+                            <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
                                 Add a Plant
-                            </Link>
+                            </div>
                     
                         </Router>
                     </div>
@@ -53,6 +69,8 @@ const Header = () => {
             <p className="sub-header">Gardenless Greenery for the Concrete Jungle</p>
             </div>
             {showPop ? renderPop() : renderMain()}
+            {page === addPlant && renderAddPlant()}
+            {page === aboutPage && renderAbout()}
             </div>
     )
 }

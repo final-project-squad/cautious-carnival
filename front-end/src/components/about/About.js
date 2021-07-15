@@ -6,8 +6,7 @@ import "./About.css";
 
 function About() {
   return (
-    <div>
-        <Header />
+    <div className={"aboutPage"}>
         <div className={"leavesbox"}>
           <div className={"leaves"}>
             <svg
