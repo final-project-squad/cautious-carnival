@@ -1,4 +1,3 @@
-/* to register users*/
 import { useState } from "react";
 import React from "react";
 /* import HighlightOffIcon from "@material-ui/icons/HighlightOff"; */
