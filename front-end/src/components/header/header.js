@@ -48,18 +48,17 @@ const Header = () => {
                 <div className={"navbar"}>
                     <div className="nabvar-links">
                         <Router>
-                        
-
-                            <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
-                                About
-                            </div>
-
+        
                             <div className="link nabvar-item">
                                 Plant Search
                             </div>
 
                             <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
                                 Add a Plant
+                            </div>
+
+                            <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
+                                About
                             </div>
 
                             <div className="link nabvar-item" onClick={() => navigatePop()}>
