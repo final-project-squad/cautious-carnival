@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 
 import "./header.css"
 import Register from '../Login/register';
-import addPlant from '../Plants/addPlant';
+import AddPlant from '../Plants/addPlant';
 
 const Header = () => {
     const [showPop, setShowPop] = useState(false);
@@ -25,7 +25,7 @@ const Header = () => {
     }
 
     return (<div>
-        {/* <addPlant /> */}
+        <AddPlant />
         <div className={"header"}>
             <div className={"menu"}>
                 <div className={"navbar"}>
