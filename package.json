@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",   
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm start --prefix back-end",
     "client": "npm start --prefix front-end",
     "bootstrap": "npm install -d && cd ufo-front-end && npm install -d",

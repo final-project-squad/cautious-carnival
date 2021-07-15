@@ -5,12 +5,12 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 
 
 import "./header.css"
-import Register from '../Login/register';
+// import Register from '../Login/register';
 
 
 const Header = () => {
     return (<div>
-        <Register />
+        {/* <Register /> */}
         <div className={"header"}>
             <div className={"menu"}>
                 {/* <img className={"header-logo"} src={Logo} alt="website logo" /> */}
