@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Link } from "react-router-dom"
 
 import "./header.css"
 import Register from '../Login/register';
-import AddPlant from '../Plants/addPlant';
+/* import AddPlant from '../Plants/addPlant'; */
 
 const Header = () => {
     const [showPop, setShowPop] = useState(false);
@@ -25,18 +25,12 @@ const Header = () => {
     }
 
     return (<div>
-        <AddPlant />
+      {/*   <AddPlant /> */}
         <div className={"header"}>
             <div className={"menu"}>
                 <div className={"navbar"}>
                     <div className="nabvar-links">
                         <Router>
-                        
-                            <button className="link navbar-item" onClick={() => navigateTo()}>Log In</button>
-
-                            <Link className="link nabvar-item" to="/about">
-                                About
-                            </Link>
 
                             <Link className="link nabvar-item" to="/plantsearch">
                                 Plant Search
@@ -45,7 +39,15 @@ const Header = () => {
                             <Link className="link nabvar-item" to="/add">
                                 Add a Plant
                             </Link>
-                    
+
+                            <Link className="link nabvar-item" to="/about">
+                                About
+                            </Link>
+
+                            <div className="link nabvar-item" onClick={() => navigateTo()}>
+                                Log In
+                            </div>
+
                         </Router>
                     </div>
                 </div>
