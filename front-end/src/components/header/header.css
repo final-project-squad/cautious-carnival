@@ -86,6 +86,10 @@
     transition-duration: 300ms;
 }
 
+.btt-reg {
+    padding: 5px;
+}
+
 .btt-login {
     margin-bottom: 5px;
 }

@@ -275,14 +275,22 @@ router.get("/", async (req, res) => {
       },
     ];
 
-    const userArray = [
-      { name: "Lance", email: "l@book", plants: [2, 3] },
-      { name: "Jeremy", email: "j@eremy", plants: [1, 4, 7] },
-    ];
+      const CreateUserArray = async () => {
+          
+        const plant1 = await Plant.findOne({ name: "Peace Lily Plant" });
+        const plant2 = await Plant.findOne({ name: "Corn Plant" });
+        const plant3 = await Plant.findOne({ name: "Cast Iron Plant" });
+        const plant4 = await Plant.findOne({ name: "Dragon Tree "});
+        const plant5 = await Plant.findOne({ name: "Parlor Palm"});
+        const userArray = [
+            { name: "Lance", email: "l@book", password:"password", plants: [plant1._id, plant2._id] },
+            { name: "Jeremy", email: "j@eremy",  password:"password",plants: [plant2._id, plant3._id, plant4._id, plant5._id] },
+          ];
+          return userArray
+      }
 
       const clear = async (obj) => {
-          console.log(obj)
-        await obj.deleteMany({});
+         await obj.deleteMany({});
       };
 
     const create = async (obj, testArray) => {
@@ -290,14 +298,14 @@ router.get("/", async (req, res) => {
         let db = new obj(test);
         await db.save();
       }
-      console.log(await obj.find({}));
     };
 
     const deleteCreate = async () => {
-      await clear(User, userArray);
-      await clear(Plant, plantArray);
+      await clear(User);
+      await clear(Plant);
       await create(Plant, plantArray);
-      await create(User, userArray);
+      await create(User, await CreateUserArray());
+      
     };
     deleteCreate();
 
