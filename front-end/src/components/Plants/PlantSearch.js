@@ -31,8 +31,8 @@ const FetchPlants = () => {
     //     setPlantJson(data);
     // }
     const renderSearch = async (formInput) => {
-        const response = await fetch("http://localhost:5000/plant", {
-            method: "GET",
+        const response = await fetch("http://localhost:5000/plant/search", {
+            method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 name: formInput
