@@ -57,81 +57,78 @@ const AddPlant = () => {
 
   return (
     <div className="addplant">
+      {/* <HighlightOffIcon className="close-icon" /> */}
+      <form onSubmit={postPLant}>
+        <div className="form-addplant">
 
-      <form onSubmit={postPLant} className="form-addplant">
+          <div>
+            <label>Name</label>
+            <input onChange={(e) => setname(e.target.value)} value={name} />
 
-        {/* <HighlightOffIcon className="close-icon" /> */}
+            <label>Maintenance</label>
+            <select 
+                value={maintenance}
+                onChange={(e) => setmaintenance(e.target.value) }
+                name="setmaintenance">
+                  <option disabled selected value="">-- Select maintenance --</option>
+                  <option value="low">Low</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="high">High</option>
+            </select>
 
-        <label>name</label>
-        <input onChange={(e) => setname(e.target.value)} value={name} />
-        <br />
+            <label>Lighting</label>
+            <select 
+                value={lighting}
+                onChange={(e) => setlighting(e.target.value) }
+                name="setlighting">
+                  <option disabled selected value="">-- Select lighting --</option>
+                  <option value="low-light">Happy with shadow</option>
+                  <option value="partial-sun">Likes a mixture</option>
+                  <option value="sunlight">Happy with direct sun</option>
+            </select>
+            
+            <label>Pet-friendly</label>
+            <select 
+                value={petFriendly}
+                onChange={(e) => setpetFriendly(e.target.value) }
+                name="petFriendly">
+                  <option disabled selected value="">-- Select an option --</option>
+                  <option value={true}>Yes</option>
+                  <option value={false}>No</option>
+            </select>
+          </div>
+       
+          <div>
+            <label>Watering</label>
+            <select 
+                value={watering}
+                onChange={(e) => setwatering(e.target.value) }
+                name="watering">
+                  <option disabled selected value="">-- Select an option --</option>
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+            </select>
 
-        <label>Maintenance</label>
-        <select 
-            value={maintenance}
-            onChange={(e) => setmaintenance(e.target.value) }
-            name="setmaintenance">
-              <option disabled selected value="">-- Select maintenance --</option>
-              <option value="low">Low</option>
-              <option value="moderate">Moderate</option>
-              <option value="high">High</option>
-        </select>
-        <br />
-
-        <label>Lighting</label>
-        <select 
-            value={lighting}
-            onChange={(e) => setlighting(e.target.value) }
-            name="setlighting">
-              <option disabled selected value="">-- Select lighting --</option>
-              <option value="low-light">Happy with shadow</option>
-              <option value="partial-sun">Likes a mixture</option>
-              <option value="sunlight">Happy with direct sun</option>
-        </select>
-        <br />
-
-        <label>Pet-friendly</label>
-        <select 
-            value={petFriendly}
-            onChange={(e) => setpetFriendly(e.target.value) }
-            name="petFriendly">
-              <option disabled selected value="">-- Select an option --</option>
-              <option value={true}>Yes</option>
-              <option value={false}>No</option>
-        </select>
-        <br />
-
-        <label>Watering</label>
-        <select 
-            value={watering}
-            onChange={(e) => setwatering(e.target.value) }
-            name="watering">
-              <option disabled selected value="">-- Select an option --</option>
-              <option value="daily">Daily</option>
-              <option value="weekly">Weekly</option>
-              <option value="monthly">Monthly</option>
-        </select>
-        <br />
-
-        <label>Indoor</label>
-        <select 
-            value={indoor}
-            onChange={(e) => setindoor(e.target.value) }
-            name="indoor">
-              <option disabled selected value="">-- Select an option --</option>
-              <option value={true}>Yes</option>
-              <option value={false}>No</option>
-        </select>
-        <br />
+            <label>Indoor</label>
+            <select 
+                value={indoor}
+                onChange={(e) => setindoor(e.target.value) }
+                name="indoor">
+                  <option disabled selected value="">-- Select an option --</option>
+                  <option value={true}>Yes</option>
+                  <option value={false}>No</option>
+            </select>
+            
+            <label>Notes</label>
+            <textarea onChange={(e) => setnotes(e.target.value)} value={notes} />
+          </div>
+        </div>
         
-        <label>Notes</label>
-        <textarea onChange={(e) => setnotes(e.target.value)} value={notes} />
-        <br />
         <button type="submit" className="btt-add">
-          Add to Database
+          Add your plant
         </button>
       </form>
-
     </div>
   );
 };
