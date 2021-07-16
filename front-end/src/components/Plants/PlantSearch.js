@@ -32,7 +32,7 @@ const FetchPlants = () => {
     // }
     const renderSearch = async (formInput) => {
         const response = await fetch("http://localhost:5000/plant", {
-            method: "POST",
+            method: "GET",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 name: formInput
