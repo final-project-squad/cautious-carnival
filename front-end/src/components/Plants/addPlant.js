@@ -71,9 +71,9 @@ const AddPlant = () => {
                 onChange={(e) => setmaintenance(e.target.value) }
                 name="setmaintenance">
                   <option disabled selected value="">-- Select maintenance --</option>
-                  <option value="low">Low</option>
-                  <option value="moderate">Moderate</option>
-                  <option value="high">High</option>
+                  <option value="Low">Low</option>
+                  <option value="Moderate">Moderate</option>
+                  <option value="High">High</option>
             </select>
 
             <label>Lighting</label>
