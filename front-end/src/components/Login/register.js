@@ -5,9 +5,9 @@ import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 // const Register = ({setShowPop},{setUser}) => {
 const Register = (props) => {
-  const [name, setname] = useState();
-  const [password, setPassword] = useState();
-  const [email, setemail] = useState();
+  // const [name, setname] = useState();
+  // const [password, setPassword] = useState();
+  // const [email, setemail] = useState();
 
   // const [user, setResult] = useState([]);
 
@@ -30,7 +30,7 @@ const Register = (props) => {
 
   const RegisterUser = (e) => {
     e.preventDefault();
-    fetchLogin(name, email, password);
+    fetchLogin(props.name, props.email, props.password);
   };
 
   return (
@@ -44,23 +44,23 @@ const Register = (props) => {
         <label>name</label>
         <input
           required
-          onChange={(e) => setname(e.target.value)}
-          value={name}
+          onChange={(e) => {props.setName(e.target.value)}}
+          value={props.name}
         />
         <br />
         <label>email</label>
         <input
           required
-          onChange={(e) => setemail(e.target.value)}
-          value={email}
+          onChange={(e) => {props.setEmail(e.target.value)}}
+          value={props.email}
         />
         <br />
         <label>password</label>
         <input
           required
           type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
+          onChange={(e) => {props.setPassword(e.target.value)}}
+          value={props.password}
         />
 
         <br />

@@ -22,8 +22,16 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
+userRouter.get("/all", async (req, res) => {
+  try {
+    user = await User.find()
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).send({ message: "User not found" });
+  }
+});
+
 userRouter.get("/", auth, async (req, res) => {
-  console.log(req.user)
   try {
     res.status(200).json(req.user);
   } catch (error) {

@@ -9,7 +9,7 @@ import Register from "../Login/register";
 import AddPlant from "../Plants/addPlant";
 import About from "../about/About";
 import FetchPlants from "../Plants/PlantSearch";
-import Logout from "../Login/logout";
+// import Logout from "../Login/logout";
 /* import AddPlant from '../Plants/addPlant'; */
 
 const Header = () => {
@@ -20,9 +20,9 @@ const Header = () => {
   const addPlant = "add";
   const aboutPage = "about";
   const plantSearch = "search";
-    const [name, setname] = useState();
+  const [name, setName] = useState();
   const [password, setPassword] = useState();
-  const [email, setemail] = useState();
+  const [email, setEmail] = useState();
 
   //run function get user on load
   useEffect(() => {
@@ -34,15 +34,15 @@ const Header = () => {
   };
 
   const logout = () => {
-    if (window.confirm("Are you sure you want to logout") ==true) {
+    if (window.confirm("Are you sure you want to logout") === true) {
       localStorage.removeItem("MyToken");
       setUser();
-    }else{}
+    } else {
+    }
   };
 
   const loginLogout = () => {
     if (user) {
-      // return <div className="link nabvar-item"> Log Out NAME:{user}</div>
       return (
         <div className="link nabvar-item" onClick={() => logout()}>
           Log Out <br />
@@ -63,11 +63,35 @@ const Header = () => {
   };
 
   const renderPop = () => {
-    return <Login setUser={setUser} name={name} email={email} password={password} setShowPop={setShowPop} setShowPopReg={setShowPopReg}/>;
+    return (
+      <Login
+        setUser={setUser}
+        name={name}
+        email={email}
+        password={password}        
+        setName={setName}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        setShowPop={setShowPop}
+        setShowPopReg={setShowPopReg}
+      />
+    );
   };
 
   const renderPopReg = () => {
-    return <Register setUser={setUser} name={name} email={email} password={password} setShowPop={setShowPop} setShowPopReg={setShowPopReg}/>;
+    return (
+      <Register
+        name={name}
+        email={email}
+        password={password}
+        setName={setName}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        setUser={setUser}
+        setShowPop={setShowPop}
+        setShowPopReg={setShowPopReg}
+      />
+    );
   };
 
   const renderMain = () => {
