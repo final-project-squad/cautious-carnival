@@ -37,6 +37,7 @@ const AddPlant = () => {
 
     try {
       const data = await response.json();
+      console.log(data)
     } catch (error) {
       console.log("an error ocoured in front-end login/register");
     }

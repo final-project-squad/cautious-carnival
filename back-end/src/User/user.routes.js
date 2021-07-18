@@ -22,10 +22,10 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
-userRouter.get("/", async (req, res) => {
+userRouter.get("/", auth, async (req, res) => {
+  console.log(req.user)
   try {
-    const user = await User.find({});
-    res.status(200).send(user);
+    res.status(200).json(req.user);
   } catch (error) {
     res.status(500).send({ message: "User not found" });
   }

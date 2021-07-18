@@ -1,86 +1,123 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from "react";
+import getUser from "../../utils";
 // import Logo from './headerImage.png';
-import { BrowserRouter as Router, Link } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 // import { Button, Modal } from 'react-bootstrap';
-
-
-import "./header.css"
-import Register from '../Login/register';
-import AddPlant from '../Plants/addPlant';
-import About from '../about/About';
-import { Divider } from '@material-ui/core';
-import FetchPlants from '../Plants/PlantSearch';
+import "./header.css";
+import Register from "../Login/register";
+import AddPlant from "../Plants/addPlant";
+import About from "../about/About";
+import FetchPlants from "../Plants/PlantSearch";
+import Logout from "../Login/logout";
 /* import AddPlant from '../Plants/addPlant'; */
 
 const Header = () => {
-    const [showPop, setShowPop] = useState(false);
-    const [page, setPage] = useState(); 
-    const addPlant = "add";
-    const aboutPage = "about";
-    const plantSearch = "search";
+  const [user, setUser] = useState("");
+  const [showPop, setShowPop] = useState(false);
+  const [page, setPage] = useState();
+  const addPlant = "add";
+  const aboutPage = "about";
+  const plantSearch = "search";
 
-    const navigatePop = () => {
-        setShowPop(true);
+  //run function get user on load
+  useEffect(() => {
+    getUser(setUser);
+  }, []);
+
+  const navigatePop = () => {
+    setShowPop(true);
+  };
+
+  const logout = () => {
+    if (window.confirm("Are you sure you want to logout") ==true) {
+      localStorage.removeItem("MyToken");
+      setUser();
+    }else{}
+  };
+
+  const loginLogout = () => {
+    if (user) {
+      // return <div className="link nabvar-item"> Log Out NAME:{user}</div>
+      return (
+        <div className="link nabvar-item" onClick={() => logout()}>
+          {" "}
+          Log Out <br />
+          NAME:{user}
+        </div>
+      );
+    } else {
+      return (
+        <div className="link nabvar-item" onClick={() => navigatePop()}>
+          Log In
+        </div>
+      );
     }
+  };
 
-    const navigatePage = (nextPage) => {
-        setPage(nextPage)
-    }
+  const navigatePage = (nextPage) => {
+    setPage(nextPage);
+  };
 
-    const renderPop = () => {
-        return <Register setShowPop={setShowPop}/>
-    }
+  const renderPop = () => {
+    return <Register setUser={setUser} setShowPop={setShowPop} />;
+  };
 
-    const renderMain = () => {
-        return <div></div>
-    }
+  const renderMain = () => {
+    return <div></div>;
+  };
 
-    const renderAddPlant = () => {
-        return <AddPlant />
-    }
+  const renderAddPlant = () => {
+    return <AddPlant />;
+  };
 
-    const renderAbout = () => {
-        return <About />
-    }
+  const renderAbout = () => {
+    return <About />;
+  };
 
-    const renderSearch = () => {
-        return <FetchPlants />
-    }
+  const renderSearch = () => {
+    return <FetchPlants />;
+  };
 
-    return (<div>
-        <div className={"header"}>
-            <div className={"menu"}>
-                <div className={"navbar"}>
-                    <div className="nabvar-links">
-                        <Router>
-                            <div className="link nabvar-item" onClick={() => navigatePage(plantSearch)}>
-                                Plant Search
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
-                                Add a Plant
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
-                                About
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePop()}>
-                                Log In
-                            </div>
-                        </Router>
-                    </div>
+  return (
+    <div>
+      <div className={"header"}>
+        <div className={"menu"}>
+          <div className={"navbar"}>
+            <div className="nabvar-links">
+              <Router>
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(plantSearch)}
+                >
+                  Plant Search
                 </div>
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(addPlant)}
+                >
+                  Add a Plant
+                </div>
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(aboutPage)}
+                >
+                  About
+                </div>
+                {loginLogout()}
+              </Router>
             </div>
-            <p className="sub-header">Gardenless Greenery for the Concrete Jungle</p>
-            </div>
-            {showPop ? renderPop() : renderMain()}
-            {page === addPlant && renderAddPlant()}
-            {page === aboutPage && renderAbout()}
-            {page === plantSearch && renderSearch()}
-            </div>
-    )
-}
+          </div>
+        </div>
+        <p className="sub-header">
+          Gardenless Greenery for the Concrete Jungle
+        </p>
+      </div>
+      {showPop ? renderPop() : renderMain()}
+      {page === addPlant && renderAddPlant()}
+      {page === aboutPage && renderAbout()}
+      {page === plantSearch && renderSearch()}
+    </div>
+  );
+};
 
 export default Header;
