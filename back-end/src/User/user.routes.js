@@ -22,7 +22,6 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
-
 userRouter.post("/login", async (req, res) => {
   try {
     const token = jwt.sign({ name: req.body.name }, process.env.SECRET);
@@ -30,11 +29,36 @@ userRouter.post("/login", async (req, res) => {
       name: req.body.name,
       password: req.body.password,
     });
-    user.token = token;
+    if (user != null) {
+      user.token = token;
+      user.save()
+    }
     res.status(200).json(user);
   } catch (error) {
     res.status(500).send({ message: "User not found" });
   }
+});
+
+userRouter.post("/logout", async (req, res) => {
+  try {
+    await User.updateOne(
+      { name: req.body.username },
+      { $pull: { token: req.body.token } }
+    );
+    res.status(201).send("loged out");
+  } catch (error) {
+    res.status(500).send("failed logout");
+  }
+});
+
+userRouter.post("/usersPlants", async (req, res) => {
+  try {
+    const usersPlantsid = await User.findOne({ name: req.body.name });
+    console.log(usersPlantsid.plants);
+
+    const userPlants = await Plant.find({ _id: { $in: usersPlantsid.plants } });
+    console.log(userPlants);
+  } catch (error) {}
 });
 
 userRouter.get("/all", async (req, res) => {
@@ -76,19 +100,6 @@ userRouter.post("/addplant", async (req, res) => {
     res.status(201).send("added");
   }
 });
-
-userRouter.post("/logout", async (req, res) => {
-  try {
-    await User.updateOne(
-      { name: req.body.username },
-      { $pull: { token: req.body.token } }
-    );
-    res.status(201).send("loged out");
-  } catch (error) {
-    res.status(500).send("failed logout");
-  }
-});
-
 
 module.exports = {
   userRouter,
