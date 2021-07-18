@@ -4,6 +4,7 @@ import getUser from "../../utils";
 import { BrowserRouter as Router } from "react-router-dom";
 // import { Button, Modal } from 'react-bootstrap';
 import "./header.css";
+import Login from "../Login/login";
 import Register from "../Login/register";
 import AddPlant from "../Plants/addPlant";
 import About from "../about/About";
@@ -14,10 +15,14 @@ import Logout from "../Login/logout";
 const Header = () => {
   const [user, setUser] = useState("");
   const [showPop, setShowPop] = useState(false);
+  const [showPopReg, setShowPopReg] = useState(false);
   const [page, setPage] = useState();
   const addPlant = "add";
   const aboutPage = "about";
   const plantSearch = "search";
+    const [name, setname] = useState();
+  const [password, setPassword] = useState();
+  const [email, setemail] = useState();
 
   //run function get user on load
   useEffect(() => {
@@ -40,7 +45,6 @@ const Header = () => {
       // return <div className="link nabvar-item"> Log Out NAME:{user}</div>
       return (
         <div className="link nabvar-item" onClick={() => logout()}>
-          {" "}
           Log Out <br />
           NAME:{user}
         </div>
@@ -48,7 +52,7 @@ const Header = () => {
     } else {
       return (
         <div className="link nabvar-item" onClick={() => navigatePop()}>
-          Log In
+          Log In / Register
         </div>
       );
     }
@@ -59,7 +63,11 @@ const Header = () => {
   };
 
   const renderPop = () => {
-    return <Register setUser={setUser} setShowPop={setShowPop} />;
+    return <Login setUser={setUser} name={name} email={email} password={password} setShowPop={setShowPop} setShowPopReg={setShowPopReg}/>;
+  };
+
+  const renderPopReg = () => {
+    return <Register setUser={setUser} name={name} email={email} password={password} setShowPop={setShowPop} setShowPopReg={setShowPopReg}/>;
   };
 
   const renderMain = () => {
@@ -113,6 +121,7 @@ const Header = () => {
         </p>
       </div>
       {showPop ? renderPop() : renderMain()}
+      {showPopReg ? renderPopReg() : renderMain()}
       {page === addPlant && renderAddPlant()}
       {page === aboutPage && renderAbout()}
       {page === plantSearch && renderSearch()}

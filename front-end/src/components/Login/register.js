@@ -24,25 +24,21 @@ const Register = (props) => {
     const data = await response.json();
     localStorage.setItem("MyToken", data.token);
     props.setUser(data.name);
-    props.setShowPop(false);
+    props.setShowPop(false);    
+    props.setShowPopReg(false);
   };
 
-  const getLogin = (e) => {
+  const RegisterUser = (e) => {
     e.preventDefault();
     fetchLogin(name, email, password);
   };
 
-  const register = (e) => {
-    alert(" this needs to opena new pop up to get details")
-    console.log("register");
-  };
-
   return (
     <div className="form-login">
-      <form onSubmit={getLogin}>
+      <form onSubmit={RegisterUser}>
         <HighlightOffIcon
           className="close-icon"
-          onClick={() => props.setShowPop(false)}
+          onClick={() => props.setShowPopReg(false)}
         />
 
         <label>name</label>
@@ -69,12 +65,9 @@ const Register = (props) => {
 
         <br />
         <button type="submit" className="btt-login">
-          Login
+        Register
         </button>
       </form>
-      <button onClick={register} className="btt-reg">
-        Register
-      </button>
     </div>
   );
 };
