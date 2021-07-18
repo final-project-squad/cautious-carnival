@@ -1,15 +1,8 @@
 /* to register users*/
-import { useState } from "react";
 import React from "react";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-// const Register = ({setShowPop},{setUser}) => {
 const Register = (props) => {
-  // const [name, setname] = useState();
-  // const [password, setPassword] = useState();
-  // const [email, setemail] = useState();
-
-  // const [user, setResult] = useState([]);
 
   const fetchLogin = async (name, email, password) => {
     const response = await fetch("http://localhost:5000/user", {

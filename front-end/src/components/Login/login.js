@@ -1,37 +1,34 @@
 /* to register users*/
-import { useState } from "react";
 import React from "react";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 // const Register = ({setShowPop},{setUser}) => {
 const Login = (props) => {
-//   const [name, setname] = useState();
-//   const [password, setPassword] = useState();
-//   const [email, setemail] = useState();
 
-  // const [user, setResult] = useState([]);
-
-  const fetchLogin = async (name, email, password) => {
+  const fetchLogin = async (name, password) => {
     const response = await fetch("http://localhost:5000/user/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: name,
-        email: email,
         password: password,
       }),
     });
     const data = await response.json();
+    if (data != null){
     localStorage.setItem("MyToken", data.token);
     props.setUser(data.name);
     props.setShowPop(false);
     props.setShowPopReg(false)
+    } else {
+      alert("usernmae or password not recognized")
+    }
   };
 
   const checkLogin = (e) => {
-    alert("this needs to check the login")
-    // e.preventDefault();
-    // fetchLogin(name, email, password);
+    // alert("this needs to check the login")
+    e.preventDefault();
+    fetchLogin(props.name, props.password);
   };
 
   const register = (e) => {

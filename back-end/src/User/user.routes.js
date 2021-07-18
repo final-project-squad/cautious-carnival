@@ -24,7 +24,7 @@ userRouter.post("/", async (req, res) => {
 
 userRouter.get("/all", async (req, res) => {
   try {
-    user = await User.find()
+    user = await User.find();
     res.status(200).send(user);
   } catch (error) {
     res.status(500).send({ message: "User not found" });
@@ -71,6 +71,18 @@ userRouter.post("/logout", async (req, res) => {
     res.status(201).send("loged out");
   } catch (error) {
     res.status(500).send("failed logout");
+  }
+});
+
+userRouter.post("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      name: req.body.name,
+      password: req.body.password,
+    });
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).send({ message: "User not found" });
   }
 });
 
