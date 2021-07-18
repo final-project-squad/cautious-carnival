@@ -22,6 +22,21 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
+
+userRouter.post("/login", async (req, res) => {
+  try {
+    const token = jwt.sign({ name: req.body.name }, process.env.SECRET);
+    const user = await User.findOne({
+      name: req.body.name,
+      password: req.body.password,
+    });
+    user.token = token;
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).send({ message: "User not found" });
+  }
+});
+
 userRouter.get("/all", async (req, res) => {
   try {
     user = await User.find();
@@ -74,17 +89,6 @@ userRouter.post("/logout", async (req, res) => {
   }
 });
 
-userRouter.post("/login", async (req, res) => {
-  try {
-    const user = await User.findOne({
-      name: req.body.name,
-      password: req.body.password,
-    });
-    res.status(200).json(user);
-  } catch (error) {
-    res.status(500).send({ message: "User not found" });
-  }
-});
 
 module.exports = {
   userRouter,

@@ -16,6 +16,7 @@ const Login = (props) => {
     });
     const data = await response.json();
     if (data != null){
+    console.log(data)
     localStorage.setItem("MyToken", data.token);
     props.setUser(data.name);
     props.setShowPop(false);

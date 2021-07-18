@@ -44,9 +44,11 @@ const Header = () => {
   const loginLogout = () => {
     if (user) {
       return (
-        <div className="link nabvar-item" onClick={() => logout()}>
-          Log Out <br />
-          NAME:{user}
+        <div>
+          <div className="link nabvar-item" onClick={() => logout()}>
+            Log Out <br />
+          </div>
+            Logged in as : {user}
         </div>
       );
     } else {
@@ -68,7 +70,7 @@ const Header = () => {
         setUser={setUser}
         name={name}
         email={email}
-        password={password}        
+        password={password}
         setName={setName}
         setEmail={setEmail}
         setPassword={setPassword}
