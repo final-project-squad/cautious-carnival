@@ -75,8 +75,7 @@ const Header = () => {
   const populate = async () =>
   {try {
     await fetch("http://localhost:5000/populate");
-  } catch (error) {
-    
+  } catch (error) {    
   }  }
 
   const navigatePage = (nextPage) => {
