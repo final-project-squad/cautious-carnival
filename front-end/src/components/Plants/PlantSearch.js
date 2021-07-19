@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import "./addPlant.css";
+import "./Plant.css";
 import Plant from "./Plant";
 
 const FetchPlants = () => {
@@ -124,10 +124,13 @@ const FetchPlants = () => {
           All Plants
         </button>
       </header>
-      <form className="form-addplant">
+      <form className="form-searchplant">
+      <div className="searchOption">
         <label>Search by Name:</label>
         <input onChange={(n) => setName(n.target.value)} />
         <button onClick={getName}>Submit</button>
+        </div>
+        <div className="searchOption">
         <label>Search by Maintenance:</label>
         <select
           value={maintenance}
@@ -142,6 +145,8 @@ const FetchPlants = () => {
           <option value="High">High</option>
         </select>
         <button onClick={getMaintenance}>Submit</button>
+        </div>
+        <div className="searchOption">
         <label>Search for Pet Friendly Plants:</label>
         <select
           value={petFriendly}
@@ -155,6 +160,8 @@ const FetchPlants = () => {
           <option value={false}>No</option>
         </select>
         <button onClick={getPetFriendly}>Submit</button>
+        </div>
+        <div className="searchOption">
         <label>Search by Light Requirements:</label>
         <select
           value={lighting}
@@ -169,6 +176,7 @@ const FetchPlants = () => {
           <option value="sunlight">Happy with direct sun</option>
         </select>
         <button onClick={getLighting}>Submit</button>
+        </div>
       </form>
       <div className="searchComponents">
         {plantjson.map((item,index) => {

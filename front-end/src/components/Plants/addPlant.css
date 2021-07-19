@@ -48,6 +48,7 @@
     cursor: pointer;
     transition-duration: 300ms;
     margin-top: 20px;
+    margin-bottom: -30px;
 }
 
 .addplant button:hover {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import Footer from "../footer/footer";
 /* import HighlightOffIcon from "@material-ui/icons/HighlightOff"; */
 import "./addPlant.css"
 
@@ -105,7 +106,7 @@ const AddPlant = () => {
                 value={watering}
                 onChange={(e) => setwatering(e.target.value) }
                 name="watering">
-                  <option disabled selected value="">-- Select an option --</option>
+                  <option disabled selected value="">-- Select watering --</option>
                   <option value="daily">Daily</option>
                   <option value="weekly">Weekly</option>
                   <option value="monthly">Monthly</option>
@@ -130,6 +131,8 @@ const AddPlant = () => {
           Add your plant
         </button>
       </form>
+
+      <Footer />
     </div>
   );
 };
