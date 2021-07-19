@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   const logout = () => {
-    if (window.confirm("Are you sure you want to logout") === true) {
+    if (window.confirm("Are you sure you want to log out?") === true) {
       localStorage.removeItem("MyToken");
       setUser();
     } else {
@@ -50,7 +50,9 @@ const Header = () => {
           <div className="link nabvar-item" onClick={() => logout()}>
             Log Out <br />
           </div>
-          Logged in as : {user}
+          <div className="login-greeting">
+            Hello {user}!
+          </div>
         </div>
       );
     } else {
