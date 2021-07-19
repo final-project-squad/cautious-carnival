@@ -50,7 +50,7 @@ const Header = () => {
           <div className="link nabvar-item" onClick={() => logout()}>
             Log Out <br />
           </div>
-            Logged in as : {user}
+          Logged in as : {user}
         </div>
       );
     } else {
@@ -62,12 +62,28 @@ const Header = () => {
     }
   };
 
+  const showPopulate = () => {
+    if (name === "Lance") {
+      return (
+        <div className="link nabvar-item" onClick={() => populate()}>
+          populate DB <br />
+        </div>
+      );
+    }
+  };
+
+  const populate = async () =>
+  {try {
+    await fetch("http://localhost:5000/populate");
+  } catch (error) {
+    
+  }  }
+
   const navigatePage = (nextPage) => {
     setPage(nextPage);
   };
 
   const renderPop = () => {
-
     return (
       <Login
         setUser={setUser}
@@ -115,23 +131,17 @@ const Header = () => {
   };
 
   const renderUserPlants = () => {
-    return <UserPlants user={user}/>;
+    return <UserPlants user={user} />;
   };
 
   return (
-
     <div className="headerTotal">
       <div className={"header"}>
         <div className={"menu"}>
           <div className={"navbar"}>
             <div className="nabvar-links">
               <Router>
-              <div
-                  className="link nabvar-item"
-                  onClick={() => navigatePage(userPlantsSearch)}
-                >
-                  User Plants
-                </div>
+                {showPopulate()}
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(plantSearch)}
@@ -164,8 +174,7 @@ const Header = () => {
       {page === userPlantsSearch && renderUserPlants()}
       {page === addPlant && renderAddPlant()}
       {page === aboutPage && renderAbout()}
-      {page === plantSearch && renderSearch()}      
-      
+      {page === plantSearch && renderSearch()}
     </div>
   );
 };
