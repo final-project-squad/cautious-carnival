@@ -1,6 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import "./addPlant.css";
+import "./Plant.css";
 import Plant from "./Plant";
 
 const FetchPlants = () => {
