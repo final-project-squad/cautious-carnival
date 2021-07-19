@@ -1,0 +1,67 @@
+.plantheading header {
+  /*   border: 10px solid red; */
+    text-align: center;
+    padding: 50px;
+}
+
+.plantheading header button {
+    background-color: rgb(223, 226, 203);
+    border: 1px solid #888d68;
+    color: #5f6343;
+    border-radius: 5px;
+    padding: 6px;
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+.plantheading header button:hover {
+    background-color: #888d68;
+    color: white;
+}
+
+.form-searchplant {
+    z-index: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.form-searchplant input,
+.form-searchplant select {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4F513D;
+    box-sizing: border-box;
+    width: 300px;
+    margin-top: 3px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888d68;
+}
+
+.form-searchplant input:focus,
+.form-searchplant select:focus {
+    outline: none;
+}
+
+.form-searchplant label {
+    display: block;
+}
+
+.form-searchplant button {
+    background-color: rgb(223, 226, 203);
+    border: 1px solid #888d68;
+    color: #5f6343;
+    border-radius: 5px;
+    padding: 6px;
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+.form-searchplant button:hover {
+    background-color: #888d68;
+    color: white;
+}

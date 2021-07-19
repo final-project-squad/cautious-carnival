@@ -23,7 +23,7 @@ const Login = (props) => {
     props.setShowPop(false);
     props.setShowPopReg(false)
     } else {
-      alert("usernmae or password not recognized")
+      alert("Username or password not recognised")
     }
   };
 
