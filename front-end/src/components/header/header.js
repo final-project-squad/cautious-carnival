@@ -9,6 +9,7 @@ import Register from "../Login/register";
 import AddPlant from "../Plants/addPlant";
 import About from "../about/About";
 import FetchPlants from "../Plants/PlantSearch";
+import UserPlants from "../Plants/UserPlants";
 // import Logout from "../Login/logout";
 /* import AddPlant from '../Plants/addPlant'; */
 
@@ -17,6 +18,7 @@ const Header = () => {
   const [showPop, setShowPop] = useState(false);
   const [showPopReg, setShowPopReg] = useState(false);
   const [page, setPage] = useState();
+  const userPlantsSearch = "userSearch";
   const addPlant = "add";
   const aboutPage = "about";
   const plantSearch = "search";
@@ -113,6 +115,10 @@ io9
     return <FetchPlants />;
   };
 
+  const renderUserPlants = () => {
+    return <UserPlants user={user}/>;
+  };
+
   return (
 
     <div className="headerTotal">
@@ -122,6 +128,12 @@ io9
           <div className={"navbar"}>
             <div className="nabvar-links">
               <Router>
+              <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(userPlantsSearch)}
+                >
+                  User Plants
+                </div>
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(plantSearch)}
@@ -155,9 +167,11 @@ io9
       </div>
       {showPop ? renderPop() : renderMain()}
       {showPopReg ? renderPopReg() : renderMain()}
+      {page === userPlantsSearch && renderUserPlants()}
       {page === addPlant && renderAddPlant()}
       {page === aboutPage && renderAbout()}
-      {page === plantSearch && renderSearch()}
+      {page === plantSearch && renderSearch()}      
+      
     </div>
   );
 };
