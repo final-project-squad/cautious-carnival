@@ -65,6 +65,7 @@ const Header = () => {
   };
 
   const renderPop = () => {
+
     return (
       <Login
         setUser={setUser}
@@ -79,7 +80,7 @@ const Header = () => {
       />
     );
   };
-
+io9
   const renderPopReg = () => {
     return (
       <Register
@@ -113,6 +114,8 @@ const Header = () => {
   };
 
   return (
+
+    <div className="headerTotal">
     <div>
       <div className={"header"}>
         <div className={"menu"}>
@@ -124,6 +127,10 @@ const Header = () => {
                   onClick={() => navigatePage(plantSearch)}
                 >
                   Plant Search
+                </div>
+
+                <div className="link nabvar-item" onClick={() => navigatePop()}>
+                  Log In
                 </div>
                 <div
                   className="link nabvar-item"
