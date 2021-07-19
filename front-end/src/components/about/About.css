@@ -47,10 +47,13 @@
 
 .leaves {
     width: 30%;
+    min-width: 100px;
 }
 
 .peticon, .sunicon, .easyicon {
     width: 20%;
+    min-width: 100px;
+    margin-bottom: 30px;
 }
 
 p, h2 {
