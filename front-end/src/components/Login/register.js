@@ -1,18 +1,10 @@
 /* to register users*/
-import { useState } from "react";
-import React from 'react';
-import HighlightOffIcon from '@material-ui/icons/HighlightOff';
+import React from "react";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-const Register = ({setShowPop}) => {
-  console.log("hitting register");
-  const [name, setname] = useState();
-  const [password, setPassword] = useState();
-  const [email, setemail] = useState();
-
-  // const [user, setResult] = useState([]);
+const Register = (props) => {
 
   const fetchLogin = async (name, email, password) => {
-    
     const response = await fetch("http://localhost:5000/user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -22,45 +14,54 @@ const Register = ({setShowPop}) => {
         password: password,
       }),
     });
-    
-    try {
-      const data = await response.json();
-      // setResult(data);
-      localStorage.setItem("MyToken", data.token);
-      alert("user Created");
-    } catch (error) {
-      console.log("an error ocoured in front-end login/register");
-    }
+    const data = await response.json();
+    localStorage.setItem("MyToken", data.token);
+    props.setUser(data.name);
+    props.setShowPop(false);    
+    props.setShowPopReg(false);
   };
 
-  const getLogin = (e) => {
-    console.log("hope")
+  const RegisterUser = (e) => {
     e.preventDefault();
-    fetchLogin(name, email, password);
-  };
-
-  const register = (e) => {
-    console.log("register")
+    fetchLogin(props.name, props.email, props.password);
   };
 
   return (
     <div className="form-login">
-    <form onSubmit={getLogin}>
-          <HighlightOffIcon className="close-icon" onClick={() => setShowPop(false)}/>
+      <form onSubmit={RegisterUser}>
+        <HighlightOffIcon
+          className="close-icon"
+          onClick={() => props.setShowPopReg(false)}
+        />
 
-          <label>name</label>
-          <input onChange={(e) => setname(e.target.value)} value={name} />
-          <br />
-          <label>email</label>
-          <input onChange={(e) => setemail(e.target.value)} value={email} />
-          <br />
-          <label>password</label>
-          <input onChange={(e) => setPassword(e.target.value)} value={password} />
-          <br />
-          <button type="submit" className="btt-login">Login</button>
-        </form>
-        <button onClick={register} className="btt-reg">Register</button>
-        </div>
+        <label>name</label>
+        <input
+          required
+          onChange={(e) => {props.setName(e.target.value)}}
+          value={props.name}
+        />
+        <br />
+        <label>email</label>
+        <input
+          required
+          onChange={(e) => {props.setEmail(e.target.value)}}
+          value={props.email}
+        />
+        <br />
+        <label>password</label>
+        <input
+          required
+          type="password"
+          onChange={(e) => {props.setPassword(e.target.value)}}
+          value={props.password}
+        />
+
+        <br />
+        <button type="submit" className="btt-login">
+        Register
+        </button>
+      </form>
+    </div>
   );
 };
 
