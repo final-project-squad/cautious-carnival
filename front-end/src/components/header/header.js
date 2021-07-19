@@ -1,86 +1,97 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 // import Logo from './headerImage.png';
-import { BrowserRouter as Router, Link } from "react-router-dom"
+import { BrowserRouter as Router, Link } from "react-router-dom";
 // import { Button, Modal } from 'react-bootstrap';
 
-
-import "./header.css"
-import Register from '../Login/register';
-import AddPlant from '../Plants/addPlant';
-import About from '../about/About';
-import { Divider } from '@material-ui/core';
-import FetchPlants from '../Plants/PlantSearch';
+import "./header.css";
+import Register from "../Login/register";
+import AddPlant from "../Plants/addPlant";
+import About from "../about/About";
+import { Divider } from "@material-ui/core";
+import FetchPlants from "../Plants/PlantSearch";
 /* import AddPlant from '../Plants/addPlant'; */
 
 const Header = () => {
-    const [showPop, setShowPop] = useState(false);
-    const [page, setPage] = useState(); 
-    const addPlant = "add";
-    const aboutPage = "about";
-    const plantSearch = "search";
+  const [showPop, setShowPop] = useState(false);
+  const [page, setPage] = useState();
+  const addPlant = "add";
+  const aboutPage = "about";
+  const plantSearch = "search";
 
-    const navigatePop = () => {
-        setShowPop(true);
-    }
+  const navigatePop = () => {
+    setShowPop(true);
+  };
 
-    const navigatePage = (nextPage) => {
-        setPage(nextPage)
-    }
+  const navigatePage = (nextPage) => {
+    setPage(nextPage);
+  };
 
-    const renderPop = () => {
-        return <Register setShowPop={setShowPop}/>
-    }
+  const renderPop = () => {
+    return <Register setShowPop={setShowPop} />;
+  };
 
-    const renderMain = () => {
-        return <div></div>
-    }
+  const renderMain = () => {
+    return <div></div>;
+  };
 
-    const renderAddPlant = () => {
-        return <AddPlant />
-    }
+  const renderAddPlant = () => {
+    return <AddPlant />;
+  };
 
-    const renderAbout = () => {
-        return <About />
-    }
+  const renderAbout = () => {
+    return <About />;
+  };
 
-    const renderSearch = () => {
-        return <FetchPlants />
-    }
+  const renderSearch = () => {
+    return <FetchPlants />;
+  };
 
-    return (<div>
-        <div className={"header"}>
-            <div className={"menu"}>
-                <div className={"navbar"}>
-                    <div className="nabvar-links">
-                        <Router>
-                            <div className="link nabvar-item" onClick={() => navigatePage(plantSearch)}>
-                                Plant Search
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
-                                Add a Plant
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
-                                About
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePop()}>
-                                Log In
-                            </div>
-                        </Router>
-                    </div>
+  return (
+    <div className="headerTotal">
+      <div className={"header"}>
+        <div className={"menu"}>
+          <div className={"navbar"}>
+            <div className="nabvar-links">
+              <Router>
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(plantSearch)}
+                >
+                  Plant Search
                 </div>
+
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(addPlant)}
+                >
+                  Add a Plant
+                </div>
+
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(aboutPage)}
+                >
+                  About
+                </div>
+
+                <div className="link nabvar-item" onClick={() => navigatePop()}>
+                  Log In
+                </div>
+              </Router>
             </div>
-            <p className="sub-header">Gardenless Greenery for the Concrete Jungle</p>
-            </div>
-            {showPop ? renderPop() : renderMain()}
-            {page === addPlant && renderAddPlant()}
-            {page === aboutPage && renderAbout()}
-            {page === plantSearch && renderSearch()}
-            </div>
-    )
-}
+          </div>
+        </div>
+        <p className="sub-header">
+          Gardenless Greenery for the Concrete Jungle
+        </p>
+      </div>
+      {showPop ? renderPop() : renderMain()}
+      {page === addPlant && renderAddPlant()}
+      {page === aboutPage && renderAbout()}
+      {page === plantSearch && renderSearch()}
+    </div>
+  );
+};
 
 export default Header;

@@ -7,546 +7,164 @@ const Footer = () => {
     <div className="footer">
 
       <div className="footer-svg">
-        <svg version="1.1" id="Layer_1" viewBox="0 0 1920 1080">
-          <path className="st0" d="M18.97,851.9" />
-          <g>
-            <polyline
-              className="st0"
-              points="1516.97,851.9 1516.97,701.82 1599.73,701.82 1599.73,851.9 	"
-            />
-            <polyline
-              className="st0"
-              points="1529.92,701.82 1573.08,701.82 1573.08,851.9 	"
-            />
-            <path className="st0" d="M1588.9,701.82" />
-            <rect
-              x="1527.58"
-              y="713.87"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-            <rect
-              x="1549.54"
-              y="713.87"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-            <rect
-              x="1527.58"
-              y="745.24"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-            <rect
-              x="1549.54"
-              y="745.24"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-            <rect
-              x="1527.58"
-              y="776.61"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-            <rect
-              x="1549.54"
-              y="776.61"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-          </g>
-          <g>
-            <polyline
-              className="st0"
-              points="368.73,851.9 368.73,701.82 285.97,701.82 285.97,851.9 	"
-            />
-            <polyline
-              className="st0"
-              points="355.79,701.82 312.63,701.82 312.63,851.9 	"
-            />
-            <path className="st0" d="M296.8,701.82" />
+      <svg version="1.1" id="Layer_1" x="0px" y="0px"
+	 viewBox="0 0 1920 135">
+<path class="st0" d="M18.58,134.7"/>
+<g>
+	<polyline class="st0" points="1690.05,134.7 1690.05,43.59 1740.29,43.59 1740.29,134.7 	"/>
+	<polyline class="st0" points="1697.91,43.59 1724.11,43.59 1724.11,134.7 	"/>
+	<path class="st0" d="M1733.72,43.59"/>
+	<rect x="1696.49" y="50.9" class="st0" width="7.62" height="13.33"/>
+	<rect x="1709.82" y="50.9" class="st0" width="7.62" height="13.33"/>
+	<rect x="1696.49" y="69.95" class="st0" width="7.62" height="13.33"/>
+	<rect x="1709.82" y="69.95" class="st0" width="7.62" height="13.33"/>
+	<rect x="1696.49" y="88.99" class="st0" width="7.62" height="13.33"/>
+	<rect x="1709.82" y="88.99" class="st0" width="7.62" height="13.33"/>
+</g>
+<g>
+	<polyline class="st0" points="230.93,134.7 230.93,43.59 180.68,43.59 180.68,134.7 	"/>
+	<polyline class="st0" points="223.07,43.59 196.86,43.59 196.86,134.7 	"/>
+	<path class="st0" d="M187.26,43.59"/>
+	
+		<rect x="216.87" y="50.9" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 441.3533 115.134)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="203.54" y="50.9" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 414.6895 115.134)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="216.87" y="69.95" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 441.3533 153.2251)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="203.54" y="69.95" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 414.6895 153.2251)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="216.87" y="88.99" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 441.3533 191.3163)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="203.54" y="88.99" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 414.6895 191.3163)" class="st0" width="7.62" height="13.33"/>
+</g>
+<polyline class="st0" points="118.61,135.37 118.61,92.76 68.36,92.76 68.36,135.37 "/>
+<polyline class="st0" points="74.94,92.76 74.94,75.32 110.75,75.32 110.75,92.76 84.55,92.76 84.55,135.37 "/>
+<polyline class="st0" points="80.18,75.32 80.18,57.39 105.51,57.39 105.51,75.32 85.86,75.32 85.86,92.76 "/>
+<rect x="104.55" y="100.08" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 216.7189 213.4874)" class="st0" width="7.62" height="13.33"/>
+<rect x="91.22" y="100.08" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 190.0551 213.4874)" class="st0" width="7.62" height="13.33"/>
+<rect x="104.55" y="119.12" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 216.7189 251.5786)" class="st0" width="7.62" height="13.33"/>
+<rect x="91.22" y="119.12" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 190.0551 251.5786)" class="st0" width="7.62" height="13.33"/>
+<g>
+	<path class="st0" d="M1903,134.7"/>
+	<polyline class="st0" points="1903,134.7 1903,43.59 1852.75,43.59 1852.75,134.7 	"/>
+	<polyline class="st0" points="1859.33,43.59 1859.33,26.14 1895.14,26.14 1895.14,43.59 1868.94,43.59 1868.94,134.7 	"/>
+	<polyline class="st0" points="1864.57,26.14 1864.57,8.21 1889.9,8.21 1889.9,26.14 1870.25,26.14 1870.25,43.59 	"/>
+	
+		<rect x="1888.94" y="50.9" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3785.4988 115.134)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="1875.61" y="50.9" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3758.835 115.134)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="1888.94" y="69.95" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3785.4988 153.2251)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="1875.61" y="69.95" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3758.835 153.2251)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="1888.94" y="88.99" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3785.4988 191.3163)" class="st0" width="7.62" height="13.33"/>
+	
+		<rect x="1875.61" y="88.99" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3758.835 191.3163)" class="st0" width="7.62" height="13.33"/>
+</g>
+<g>
+	<path class="st0" d="M17.97,134.7"/>
+	<polyline class="st0" points="17.97,134.7 17.97,43.59 68.22,43.59 68.22,134.7 	"/>
+	<polyline class="st0" points="61.64,43.59 61.64,26.14 25.83,26.14 25.83,43.59 52.04,43.59 52.04,134.7 	"/>
+	<polyline class="st0" points="56.4,26.14 56.4,8.21 31.07,8.21 31.07,26.14 50.73,26.14 50.73,43.59 	"/>
+	<rect x="24.41" y="50.9" class="st0" width="7.62" height="13.33"/>
+	<rect x="37.75" y="50.9" class="st0" width="7.62" height="13.33"/>
+	<rect x="24.41" y="69.95" class="st0" width="7.62" height="13.33"/>
+	<rect x="37.75" y="69.95" class="st0" width="7.62" height="13.33"/>
+	<rect x="24.41" y="88.99" class="st0" width="7.62" height="13.33"/>
+	<rect x="37.75" y="88.99" class="st0" width="7.62" height="13.33"/>
+</g>
+<path class="st0" d="M1701.97,212.9"/>
+<polyline class="st0" points="1802.36,135.37 1802.36,91.55 1852.61,91.55 1852.61,135.37 "/>
+<polyline class="st0" points="1846.03,91.55 1846.03,74.1 1810.22,74.1 1810.22,91.55 1836.43,91.55 1836.43,135.37 "/>
+<polyline class="st0" points="1840.79,74.1 1840.79,56.17 1815.46,56.17 1815.46,74.1 1835.12,74.1 1835.12,91.55 "/>
+<rect x="1808.8" y="98.86" class="st0" width="7.62" height="13.33"/>
+<rect x="1822.14" y="98.86" class="st0" width="7.62" height="13.33"/>
+<rect x="1808.8" y="117.91" class="st0" width="7.62" height="13.33"/>
+<rect x="1822.14" y="117.91" class="st0" width="7.62" height="13.33"/>
+<g>
+	<g>
+		<line class="st0" x1="180.66" y1="135.94" x2="180.39" y2="40.26"/>
+		<polyline class="st0" points="135.36,26 146.66,40.26 185.84,40.26 169.83,21.84 132.15,21.84 114.56,38.48 118.72,38.48 
+			118.72,135.94 		"/>
+	</g>
+	<line class="st0" x1="150.2" y1="135.94" x2="150.2" y2="40.26"/>
+	<polyline class="st0" points="158.86,135.94 158.86,123.46 172.76,123.46 172.76,135.94 	"/>
+	<line class="st0" x1="165.81" y1="135.94" x2="165.81" y2="123.46"/>
+	
+		<rect x="168.05" y="49.77" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 343.2323 106.674)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="156.76" y="49.77" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 320.6491 106.674)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="168.05" y="66.41" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 343.2323 139.9545)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="156.76" y="66.41" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 320.6491 139.9545)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="168.05" y="82.46" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 343.2323 172.0464)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="156.76" y="82.46" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 320.6491 172.0464)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="168.05" y="99.1" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 343.2323 205.3269)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="156.76" y="99.1" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 320.6491 205.3269)" class="st0" width="7.13" height="7.13"/>
+</g>
+<g>
+	<g>
+		<line class="st0" x1="292.98" y1="135.37" x2="292.7" y2="96.12"/>
+		<polyline class="st0" points="247.68,81.85 258.97,96.12 298.15,96.12 282.15,77.69 244.46,77.69 231.09,94.09 231.04,94.33 
+			231.04,135.37 		"/>
+	</g>
+	<line class="st0" x1="262.52" y1="135.37" x2="262.52" y2="96.12"/>
+	
+		<rect x="280.37" y="105.63" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 567.8667 218.3841)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="269.08" y="105.63" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 545.2835 218.3841)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="280.37" y="122.27" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 567.8667 251.6646)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="269.08" y="122.27" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 545.2835 251.6646)" class="st0" width="7.13" height="7.13"/>
+</g>
+<g>
+	<g>
+		<line class="st0" x1="1627.89" y1="135.37" x2="1628.17" y2="96.12"/>
+		<polyline class="st0" points="1673.19,81.85 1661.9,96.12 1622.71,96.12 1638.72,77.69 1676.41,77.69 1689.45,94.09 
+			1689.83,94.33 1689.83,135.37 		"/>
+	</g>
+	<line class="st0" x1="1658.35" y1="135.37" x2="1658.35" y2="96.12"/>
+	<rect x="1633.37" y="105.63" class="st0" width="7.13" height="7.13"/>
+	<rect x="1644.66" y="105.63" class="st0" width="7.13" height="7.13"/>
+	<rect x="1633.37" y="122.27" class="st0" width="7.13" height="7.13"/>
+	<rect x="1644.66" y="122.27" class="st0" width="7.13" height="7.13"/>
+</g>
+<g>
+	<g>
+		<line class="st0" x1="1802.34" y1="135.94" x2="1802.07" y2="40.26"/>
+		<polyline class="st0" points="1757.05,26 1768.34,40.26 1807.52,40.26 1791.52,21.84 1753.83,21.84 1736.25,38.48 1740.41,38.48 
+			1740.41,135.94 		"/>
+	</g>
+	<line class="st0" x1="1771.88" y1="135.94" x2="1771.88" y2="40.26"/>
+	<polyline class="st0" points="1780.54,135.94 1780.54,123.46 1794.44,123.46 1794.44,135.94 	"/>
+	<line class="st0" x1="1787.49" y1="135.94" x2="1787.49" y2="123.46"/>
+	
+		<rect x="1789.73" y="49.77" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3586.5959 106.674)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="1778.44" y="49.77" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3564.0127 106.674)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="1789.73" y="66.41" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3586.5959 139.9545)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="1778.44" y="66.41" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3564.0127 139.9545)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="1789.73" y="82.46" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3586.5959 172.0464)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="1778.44" y="82.46" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3564.0127 172.0464)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="1789.73" y="99.1" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3586.5959 205.3269)" class="st0" width="7.13" height="7.13"/>
+	
+		<rect x="1778.44" y="99.1" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3564.0127 205.3269)" class="st0" width="7.13" height="7.13"/>
+</g>
+</svg>
 
-            <rect
-              x="345.58"
-              y="713.87"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 703.7011 1449.6953)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="323.62"
-              y="713.87"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 659.7826 1449.6953)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="345.58"
-              y="745.24"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 703.7011 1512.436)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="323.62"
-              y="745.24"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 659.7826 1512.436)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="345.58"
-              y="776.61"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 703.7011 1575.1768)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="323.62"
-              y="776.61"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 659.7826 1575.1768)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-          </g>
-          <polyline
-            className="st0"
-            points="183.73,853 183.73,782.82 100.97,782.82 100.97,853 "
-          />
-          <polyline
-            className="st0"
-            points="111.8,782.82 111.8,754.09 170.79,754.09 170.79,782.82 127.63,782.82 127.63,853 "
-          />
-          <polyline
-            className="st0"
-            points="120.43,754.09 120.43,724.55 162.15,724.55 162.15,754.09 129.79,754.09 129.79,782.82 "
-          />
-          <rect
-            x="160.58"
-            y="794.87"
-            transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 333.7011 1611.6953)"
-            className="st0"
-            width="12.55"
-            height="21.96"
-          />
-          <rect
-            x="138.62"
-            y="794.87"
-            transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 289.7826 1611.6953)"
-            className="st0"
-            width="12.55"
-            height="21.96"
-          />
-          <rect
-            x="160.58"
-            y="826.24"
-            transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 333.7011 1674.436)"
-            className="st0"
-            width="12.55"
-            height="21.96"
-          />
-          <rect
-            x="138.62"
-            y="826.24"
-            transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 289.7826 1674.436)"
-            className="st0"
-            width="12.55"
-            height="21.96"
-          />
-          <g>
-            <path className="st0" d="M1867.73,851.9" />
-            <polyline
-              className="st0"
-              points="1867.73,851.9 1867.73,701.82 1784.97,701.82 1784.97,851.9 	"
-            />
-            <polyline
-              className="st0"
-              points="1795.8,701.82 1795.8,673.09 1854.79,673.09 1854.79,701.82 1811.63,701.82 1811.63,851.9 	"
-            />
-            <polyline
-              className="st0"
-              points="1804.43,673.09 1804.43,643.55 1846.16,643.55 1846.16,673.09 1813.79,673.09 1813.79,701.82 	"
-            />
-
-            <rect
-              x="1844.58"
-              y="713.87"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3701.7012 1449.6953)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="1822.62"
-              y="713.87"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3657.7827 1449.6953)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="1844.58"
-              y="745.24"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3701.7012 1512.436)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="1822.62"
-              y="745.24"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3657.7827 1512.436)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="1844.58"
-              y="776.61"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3701.7012 1575.1768)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-
-            <rect
-              x="1822.62"
-              y="776.61"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3657.7827 1575.1768)"
-              className="st0"
-              width="12.55"
-              height="21.96"
-            />
-          </g>
-          <g>
-            <path className="st0" d="M17.97,851.9" />
-            <polyline
-              className="st0"
-              points="17.97,851.9 17.97,701.82 100.73,701.82 100.73,851.9 	"
-            />
-            <polyline
-              className="st0"
-              points="89.9,701.82 89.9,673.09 30.92,673.09 30.92,701.82 74.08,701.82 74.08,851.9 	"
-            />
-            <polyline
-              className="st0"
-              points="81.27,673.09 81.27,643.55 39.55,643.55 39.55,673.09 71.92,673.09 71.92,701.82 	"
-            />
-            <rect x="28.58" y="713.87" className="st0" width="12.55" height="21.96" />
-            <rect x="50.54" y="713.87" className="st0" width="12.55" height="21.96" />
-            <rect x="28.58" y="745.24" className="st0" width="12.55" height="21.96" />
-            <rect x="50.54" y="745.24" className="st0" width="12.55" height="21.96" />
-            <rect x="28.58" y="776.61" className="st0" width="12.55" height="21.96" />
-            <rect x="50.54" y="776.61" className="st0" width="12.55" height="21.96" />
-          </g>
-          <path className="st0" d="M1701.97,930.9" />
-          <polyline
-            className="st0"
-            points="1701.97,853 1701.97,780.82 1784.73,780.82 1784.73,853 "
-          />
-          <polyline
-            className="st0"
-            points="1773.9,780.82 1773.9,752.09 1714.92,752.09 1714.92,780.82 1758.08,780.82 1758.08,853 "
-          />
-          <polyline
-            className="st0"
-            points="1765.27,752.09 1765.27,722.55 1723.55,722.55 1723.55,752.09 1755.92,752.09 1755.92,780.82 "
-          />
-          <rect x="1712.58" y="792.87" className="st0" width="12.55" height="21.96" />
-          <rect x="1734.54" y="792.87" className="st0" width="12.55" height="21.96" />
-          <rect x="1712.58" y="824.24" className="st0" width="12.55" height="21.96" />
-          <rect x="1734.54" y="824.24" className="st0" width="12.55" height="21.96" />
-          <g>
-            <g>
-              <line className="st0" x1="285.94" y1="853.94" x2="285.49" y2="696.35" />
-              <polyline
-                className="st0"
-                points="211.33,672.85 229.93,696.35 294.47,696.35 268.11,666 206.03,666 177.07,693.41 183.92,693.41 
-        183.92,853.94 		"
-              />
-            </g>
-            <line className="st0" x1="235.77" y1="853.94" x2="235.77" y2="696.35" />
-            <polyline
-              className="st0"
-              points="250.02,853.94 250.02,833.39 272.92,833.39 272.92,853.94 	"
-            />
-            <line className="st0" x1="261.47" y1="853.94" x2="261.47" y2="833.39" />
-
-            <rect
-              x="265.17"
-              y="712.01"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 542.084 1435.7607)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="246.57"
-              y="712.01"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 504.8868 1435.7607)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="265.17"
-              y="739.42"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 542.084 1490.5776)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="246.57"
-              y="739.42"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 504.8868 1490.5776)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="265.17"
-              y="765.85"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 542.084 1543.4369)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="246.57"
-              y="765.85"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 504.8868 1543.4369)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="265.17"
-              y="793.25"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 542.084 1598.2539)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="246.57"
-              y="793.25"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 504.8868 1598.2539)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-          </g>
-          <g>
-            <g>
-              <line className="st0" x1="470.94" y1="853" x2="470.49" y2="788.35" />
-              <polyline
-                className="st0"
-                points="396.33,764.85 414.93,788.35 479.47,788.35 453.11,758 391.03,758 369,785 368.92,785.41 
-        368.92,853 		"
-              />
-            </g>
-            <line className="st0" x1="420.77" y1="853" x2="420.77" y2="788.35" />
-
-            <rect
-              x="450.17"
-              y="804.01"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 912.084 1619.7607)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="431.57"
-              y="804.01"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 874.8868 1619.7607)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="450.17"
-              y="831.42"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 912.084 1674.5776)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="431.57"
-              y="831.42"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 874.8868 1674.5776)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-          </g>
-          <g>
-            <g>
-              <line className="st0" x1="1414.6" y1="853" x2="1415.05" y2="788.35" />
-              <polyline
-                className="st0"
-                points="1489.21,764.85 1470.61,788.35 1406.07,788.35 1432.43,758 1494.51,758 1516,785 1516.61,785.41 
-        1516.61,853 		"
-              />
-            </g>
-            <line className="st0" x1="1464.77" y1="853" x2="1464.77" y2="788.35" />
-            <rect
-              x="1423.62"
-              y="804.01"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-            <rect
-              x="1442.22"
-              y="804.01"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-            <rect
-              x="1423.62"
-              y="831.42"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-            <rect
-              x="1442.22"
-              y="831.42"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-          </g>
-          <g>
-            <g>
-              <line
-                className="st0"
-                x1="1701.94"
-                y1="853.94"
-                x2="1701.49"
-                y2="696.35"
-              />
-              <polyline
-                className="st0"
-                points="1627.33,672.85 1645.93,696.35 1710.47,696.35 1684.11,666 1622.03,666 1593.07,693.41 
-        1599.92,693.41 1599.92,853.94 		"
-              />
-            </g>
-            <line className="st0" x1="1651.77" y1="853.94" x2="1651.77" y2="696.35" />
-            <polyline
-              className="st0"
-              points="1666.02,853.94 1666.02,833.39 1688.92,833.39 1688.92,853.94 	"
-            />
-            <line className="st0" x1="1677.47" y1="853.94" x2="1677.47" y2="833.39" />
-
-            <rect
-              x="1681.17"
-              y="712.01"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3374.084 1435.7607)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="1662.57"
-              y="712.01"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3336.8867 1435.7607)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="1681.17"
-              y="739.42"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3374.084 1490.5776)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="1662.57"
-              y="739.42"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3336.8867 1490.5776)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="1681.17"
-              y="765.85"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3374.084 1543.4369)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="1662.57"
-              y="765.85"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3336.8867 1543.4369)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="1681.17"
-              y="793.25"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3374.084 1598.2539)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-
-            <rect
-              x="1662.57"
-              y="793.25"
-              transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 3336.8867 1598.2539)"
-              className="st0"
-              width="11.75"
-              height="11.75"
-            />
-          </g>
-        </svg>
       </div>
 
       <div className="footer-names">
