@@ -1,0 +1,16 @@
+.searchComponents {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.fullComponent {
+    border: solid #4F513D;
+    border-radius: 20px;
+    width: 300px;
+    height: 550px;
+    position: relative; 
+    box-shadow: 2px 2px 5px #4F513D;
+    padding: 20px;
+    margin-bottom: 30px;
+}
