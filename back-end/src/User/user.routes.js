@@ -58,7 +58,10 @@ userRouter.post("/usersPlants", async (req, res) => {
 
     const userPlants = await Plant.find({ _id: { $in: usersPlantsid.plants } });
     console.log(userPlants);
-  } catch (error) {}
+    res.status(200).json(userPlants)
+  } catch (error) {
+    
+  }
 });
 
 userRouter.get("/all", async (req, res) => {
