@@ -18,7 +18,7 @@ const Header = () => {
   const [showPop, setShowPop] = useState(false);
   const [showPopReg, setShowPopReg] = useState(false);
   const [page, setPage] = useState();
-  const userPlantsSearch = "userSearch";
+  const userPlant = "userSearch";
   const addPlant = "add";
   const aboutPage = "about";
   const plantSearch = "search";
@@ -65,7 +65,7 @@ const Header = () => {
   };
 
   const showPopulate = () => {
-    if (name === "Lance") {
+       if (user === "Lance") {
       return (
         <div className="link nabvar-item" onClick={() => populate()}>
           populate DB <br />
@@ -75,10 +75,10 @@ const Header = () => {
   };
 
   const populate = async () =>
-  {try {
+  {console.log("test")
+    try {
     await fetch("http://localhost:5000/populate");
-  } catch (error) {
-    
+  } catch (error) {    
   }  }
 
   const navigatePage = (nextPage) => {
@@ -162,6 +162,12 @@ const Header = () => {
                 >
                   About
                 </div>
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(userPlant)}
+                >
+                  User Plant
+                </div>
                 {loginLogout()}
               </Router>
             </div>
@@ -173,8 +179,9 @@ const Header = () => {
       </div>
       {showPop ? renderPop() : renderMain()}
       {showPopReg ? renderPopReg() : renderMain()}
-      {page === userPlantsSearch && renderUserPlants()}
+      {/* {page === userPlantsSearch && renderUserPlants()} */}
       {page === addPlant && renderAddPlant()}
+      {page === userPlant && renderUserPlants()}
       {page === aboutPage && renderAbout()}
       {page === plantSearch && renderSearch()}
     </div>

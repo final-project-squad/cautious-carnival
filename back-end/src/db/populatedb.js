@@ -8,95 +8,95 @@ router.get("/", async (req, res) => {
     const plantArray = [
       {
         name: "Peace Lily Plant",
-        maintenance: "moderate",
+        maintenance: "Moderate",
         lighting: "low-light",
         petFriendly: "no",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "It is good to remember, Peace Lily plants do not like direct sunlight. Keep the soil moist.",
       },
 
       {
         name: "Corn Plant",
-        maintenance: "low",
+        maintenance: "Low",
         lighting: "low-light",
         petFriendly: "no",
         watering: "",
-        indoor: "yes",
+        indoor: true,
         notes:
           "These plants do not like direct sunlight. Additionally, make sure the soil is slightly damp.",
       },
 
       {
         name: "Cast Iron Plant",
-        maintenance: "low",
+        maintenance: "Low",
         lighting: "low-light",
         petFriendly: "yes",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes: "These plants do not like direct sunlight.",
       },
 
       {
         name: "Dragon Tree ",
-        maintenance: "low",
+        maintenance: "Low",
         lighting: "low-light",
         petFriendly: "no",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes: "These plants do not like direct sunlight.",
       },
       {
         name: "Parlor Palm",
-        maintenance: "moderate",
+        maintenance: "Moderate",
         lighting: "low-light",
         petFriendly: "yes",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Also can be grown as a garden or balcony plant. Make sure to water Parlor Palm often during hot weather.",
       },
 
       {
         name: "Spider Plant",
-        maintenance: "low",
-        lighting: "partial sun",
+        maintenance: "Low",
+        lighting: "partial-sun",
         petFriendly: "yes",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes: "Also, Spider Plant can be grown as a garden or balcony plant.",
       },
 
       {
         name: "Barberton Daisy",
-        maintenance: "low",
+        maintenance: "Low",
         lighting: "sunlight",
         petFriendly: "yes",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Regular watering required. Around 1 inch once a week, and more frequently during hot weather. It is good to remember, Barberton Daisy does not like frost.",
       },
 
       {
         name: "Aloe Vera",
-        maintenance: "low",
-        lighting: "partial sun",
+        maintenance: "Low",
+        lighting: "partial-sun",
         petFriendly: " No",
         watering: "monthly",
-        indoor: "yes",
+        indoor: true,
         notes:
           " Check the soil, as the Aloe Vera might require watering every 2-3 weeks.",
       },
 
       {
         name: "African Violet",
-        maintenance: "low",
-        lighting: "partial sun",
+        maintenance: "Low",
+        lighting: "partial-sun",
         petFriendly: "yes",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes: " Make sure to let the soil dry, before next watering.",
       },
 
@@ -107,16 +107,16 @@ router.get("/", async (req, res) => {
           "Bright light, and a couple of hours of direct sunlight needed.",
         petFriendly: "yes",
         watering: "Make sure to let the soil get dry before next watering.",
-        indoor: "yes",
+        indoor: true,
       },
 
       {
         name: "Panda Plant",
-        maintenance: "moderate",
-        lighting: "partial sun",
+        maintenance: "Moderate",
+        lighting: "partial-sun",
         petFriendly: "no",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes: "Make sure to water the plant when the soil becomes dry.",
       },
 
@@ -126,150 +126,150 @@ router.get("/", async (req, res) => {
         lighting: "low-light",
         petFriendly: "yes",
         watering: "monthly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "The plant likes to be moist during the warm season, however during winter time, you can reduce watering and let the soil become slightly dry between each watering. ",
       },
 
       {
         name: "Begonias",
-        maintenance: "high",
-        lighting: "partial sun.",
+        maintenance: "High",
+        lighting: "partial-sun.",
         petFriendly: "no",
         watering: "monthly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Also can be grown as a garden plant. Make sure the soil dries between waterings.",
       },
 
       {
         name: "Fuchsia",
-        maintenance: "moderate",
+        maintenance: "Moderate",
         lighting: "sunlight.",
         petFriendly: "yes",
         watering: "daily",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Also can be grown as a garden or balcony plant, however it is good to take the plant indoors during cold winters. Make sure to water the plant when the soil is dry. Requires regular watering, especially during hot weather.",
       },
 
       {
         name: "Geranium (Pelargonium)",
-        maintenance: "moderate",
+        maintenance: "Moderate",
         lighting: "sunlight",
         petFriendly: "no",
         watering: "daily",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Make sure to check if the soil is dry, it might be required to water the plan every two days to not over-water it.  Also Geranium can be grown as a garden or balcony plant, however it is good to take the plant indoors during cold winters.",
       },
 
       {
-        name: "Abutilon (Flowering Maple) ",
-        maintenance: "low",
+        name: "Abutilon (FLowering Maple) ",
+        maintenance: "Low",
         lighting: "sunlight",
         petFriendly: "no",
         watering: "monthly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Abutilon can be grown as a garden or balcony plant.Make sure that the soil is dry between the waterings.",
       },
 
       {
         name: "Caladium Plant",
-        maintenance: "high",
+        maintenance: "High",
         lighting: "low-light",
         petFriendly: "no",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Caladium Plant can be grown as a garden plant, however it is advised to store Caladium plant in the dry, cool spot during cold winters. Make sure to keep the plant moist, but not wet.",
       },
 
       {
         name: "Gardenia",
-        maintenance: "high",
+        maintenance: "High",
         lighting: "sunlight ",
         petFriendly: "no",
-        watering: "no",
-        indoor: "yes",
+        watering: false,
+        indoor: true,
         notes:
-          "Gardenia can be grown as a garden or balcony plant. Requires regular watering. 1 inch every week is a minimum. It is vital that the soil does not get completely dry between waterings. Make sure that during high temperatures a shaded spot is provided.",
+          "Gardenia can be grown as a garden or balcony plant. Requires regular watering. 1 inch every week is a minimum. It is vital that the soil does not get completely dry between waterings. Make sure that during High temperatrues a shaded spot is provided.",
       },
 
       {
         name: "Snake Plant",
-        maintenance: "low",
-        lighting: "partial sun",
+        maintenance: "Low",
+        lighting: "partial-sun",
         petFriendly: "no",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Snake Plant  can be grown as a garden or balcony plant. This plant does not need much watering, especially during winters. You just need to make sure to water snake plants when the soil gets dry.",
       },
 
       {
         name: "Flaming Sword Bromeliad",
-        maintenance: "low",
-        lighting: "partial sun",
+        maintenance: "Low",
+        lighting: "partial-sun",
         petFriendly: "yes",
         watering: "monthly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "You can check the soil after 2-3 weeks, as the plant might need to be watered.",
       },
 
       {
         name: "Hydrangea ",
-        maintenance: "low",
-        lighting: "partial sun",
+        maintenance: "Low",
+        lighting: "partial-sun",
         petFriendly: "no",
         watering: "weekly ",
-        indoor: "yes",
+        indoor: true,
         notes:
           "It can be grown as a garden or balcony plant. Hydrangea plants like sunlight. Ideally, direct sunlight in the morning, however a nice shaded spot during the strong midday sun during summer is advised.",
       },
 
       {
         name: "Mother In Laws Tongue",
-        maintenance: "low",
-        lighting: "partial sun",
+        maintenance: "Low",
+        lighting: "partial-sun",
         petFriendly: "no",
         watering: "monthly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "This plant may require watering every 2-3 weeks during warm weather.",
       },
 
       {
         name: "ZZ Plant",
-        maintenance: "low",
+        maintenance: "Low",
         lighting: "low-light",
         petFriendly: "no",
         watering: "monthly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Make sure you do not over-water the plant. Only water it when the soil is dry.",
       },
 
       {
         name: "Amaryllis",
-        maintenance: "high",
+        maintenance: "High",
         lighting: "low-light",
         petFriendly: "no",
         watering: "daily",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Amaryllis needs to be regularly checked if watering is needed, as the requirements differ for each plant. It all depends on the conditions where the plant is kept. Make sure not to over-water that beautiful plant. Keep the soil moist, but not wet. ",
       },
 
       {
         name: "Busy Lizzie",
-        maintenance: "moderate",
-        lighting: "partial sun",
+        maintenance: "Moderate",
+        lighting: "partial-sun",
         petFriendly: "yes",
         watering: "weekly",
-        indoor: "yes",
+        indoor: true,
         notes:
           "Usually this plant requires 1 inch of water every week, however if you notice that the soil is getting dry quicker, it means Busy Lizzie needs more frequent watering.",
       },
