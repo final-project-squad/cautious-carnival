@@ -62,6 +62,8 @@ const FetchPlants = ({ user }) => {
       
       <form className="form-searchplant" onSubmit={getrenderSearch}>
       
+        <div className="form-sp">
+
         <div className="searchOption">
           <label>Search by Name:</label>
           <input onChange={(n) => setName(n.target.value)} />
@@ -110,10 +112,10 @@ const FetchPlants = ({ user }) => {
             <option value="sunlight">Happy with direct sun</option>
           </select>
         </div>
-        
-        <div>
-          <button type="reset" onClick={reset}>Reset</button>
+        </div>
+        <div className="buttons-area">
           <button type="submit">Submit</button>
+          <button type="reset" onClick={reset}>Reset</button>
         </div>
       </form>
       

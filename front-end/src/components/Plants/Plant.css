@@ -18,19 +18,21 @@
 }
 
 .form-searchplant {
-    border: 1px solid red;
     z-index: 0;
     margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 10px;
     background-color: #BAC284;
     border-top: solid #4F513D;
     border-bottom: solid #4F513D;
     padding-top: 20px;
     margin-bottom: 30px;
+}
+
+.form-sp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
 }
 
 .form-searchplant input,
@@ -89,4 +91,14 @@
 .plantheading {
     padding: 0;
     margin: 0;
+}
+
+.buttons-area button:last-child {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.buttons-area button:hover {
+    background-color: #888d68;
+    color: white;
 }
