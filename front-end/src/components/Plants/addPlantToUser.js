@@ -21,7 +21,7 @@ function AddPlantToUser(props) {
     <div>
 
       <button onClick={() => addPlantToUser(props.username, props.plant)}>
-        add plant to user
+        Add to favourites
       </button>
     </div>
   );

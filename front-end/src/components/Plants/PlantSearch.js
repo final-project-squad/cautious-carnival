@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 import "./Plant.css";
 import Plant from "./Plant";
+/* import Footer from "../footer/footer"; */
 
 const FetchPlants = ({ user }) => {
   const allPlants = "all";
@@ -57,8 +58,10 @@ const FetchPlants = ({ user }) => {
   return (
     <div className={"plantheading"}>
       <header></header>
+
+      
       <form className="form-searchplant" onSubmit={getrenderSearch}>
-        
+      
         <div className="searchOption">
           <label>Search by Name:</label>
           <input onChange={(n) => setName(n.target.value)} />
@@ -113,6 +116,7 @@ const FetchPlants = ({ user }) => {
           <button type="submit">Submit</button>
         </div>
       </form>
+      
       <div className="searchComponents">
         {plantjson.map((item, index) => {
           return (
@@ -126,6 +130,8 @@ const FetchPlants = ({ user }) => {
         })}
         {page === allPlants}
       </div>
+
+      {/* <Footer /> */}
     </div>
   );
 };

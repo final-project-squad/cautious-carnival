@@ -166,7 +166,7 @@ const Header = () => {
                   className="link nabvar-item"
                   onClick={() => navigatePage(userPlant)}
                 >
-                  User Plant
+                  Favourites
                 </div>
                 {loginLogout()}
               </Router>
