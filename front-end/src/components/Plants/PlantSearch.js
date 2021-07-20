@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import "./Plant.css";
 import Plant from "./Plant";
-/* import Footer from "../footer/footer"; */
+import Footer from "../footer/footer";
 
 const FetchPlants = ({ user }) => {
   const allPlants = "all";
@@ -133,7 +133,7 @@ const FetchPlants = ({ user }) => {
         {page === allPlants}
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

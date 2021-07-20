@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getUser from "../../utils";
-// import Logo from './headerImage.png';
 import { BrowserRouter as Router } from "react-router-dom";
-// import { Button, Modal } from 'react-bootstrap';
 import "./header.css";
 import Login from "../Login/login";
 import Register from "../Login/register";
@@ -10,8 +8,7 @@ import AddPlant from "../Plants/addPlant";
 import About from "../about/About";
 import FetchPlants from "../Plants/PlantSearch";
 import UserPlants from "../Plants/UserPlants";
-// import Logout from "../Login/logout";
-/* import AddPlant from '../Plants/addPlant'; */
+
 
 const Header = () => {
   const [user, setUser] = useState("");
@@ -164,12 +161,14 @@ const Header = () => {
                 >
                   Plant Search
                 </div>
+            
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(addPlant)}
                 >
                   Add a Plant
                 </div>
+
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(aboutPage)}
@@ -188,7 +187,6 @@ const Header = () => {
       </div>
       {showPop ? renderPop() : renderMain()}
       {showPopReg ? renderPopReg() : renderMain()}
-      {/* {page === userPlantsSearch && renderUserPlants()} */}
       {page === addPlant && renderAddPlant()}
       {page === userPlant && renderUserPlants()}
       {page === aboutPage && renderAbout()}
