@@ -1,12 +1,16 @@
 
-// import AddPlantToUser from "./addUserPlant";
+import AddPlantToUser from "./addPlantToUser";
 import "./Plant.css"
 // const Plant = ({ item, user }) => {
-const Plant = ({ item }) => {
+const Plant = ({ item, user}) => {
+
+  const plantingString = '/images/' +item.name.toLowerCase().replace(/ /g,"_")+ '.jpg';
+
     return (
     <div className="fullComponent">
       <div>
-        {<img src="./images/Corn Plant.jpg" alt="plant" />}
+        {/* <img src="./front-end/src/components/Plants/images/abutilon.jpg" alt="plants"></img> */}
+        <img src={plantingString} alt="plant"width="100px" height="100px"></img>
         {/* <img src="./images/"{...item.name} alt="plant" width="100px" height="100px"></img> */}
       </div>
       <div className="componentText">
@@ -32,9 +36,9 @@ const Plant = ({ item }) => {
           <b>notes:</b> {item.notes}
         </p>
       </div>
-      {/* <div>
+      <div>
         <AddPlantToUser username={user} plant={item.name}/>
-      </div> */}
+      </div>
       {/* <div>
                 --this should give more details about the plant
                 <button item={item}/>   

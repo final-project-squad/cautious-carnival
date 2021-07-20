@@ -3,11 +3,8 @@ import React from "react";
 import "./Plant.css";
 import Plant from "./Plant";
 
-const FetchPlants = () => {
+const FetchPlants = ({ user }) => {
   const allPlants = "all";
-  // const petSearch = "pets";
-  // const maintSearch = "maintenance";
-  // const lightSearch = "lighting";
   const [page, setPage] = useState();
   const [plantjson, setPlantJson] = useState([]);
   const [name, setName] = useState();
@@ -16,11 +13,11 @@ const FetchPlants = () => {
   const [lighting, setLighting] = useState();
 
   const reset = () => {
-    setName("")
-    setMaintenance("")
-    setPetFriendly("")
-    setLighting("")
-  } 
+    setName("");
+    setMaintenance("");
+    setPetFriendly("");
+    setLighting("");
+  };
 
   const renderSearch = async (name, maintenance, petFriendly, lighting) => {
     let listForSearch = "{";
@@ -38,12 +35,12 @@ const FetchPlants = () => {
     }
     listForSearch = listForSearch.replace(/,\s*$/, "");
     listForSearch += "}";
-    
+
     const response = await fetch("http://localhost:5000/plant/search", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: listForSearch,
-    });    
+    });
     const data = await response.json();
     setPlantJson(data);
   };
@@ -59,14 +56,13 @@ const FetchPlants = () => {
 
   return (
     <div className={"plantheading"}>
-      <header>
-
-      </header>
+      <header></header>
       <form className="form-searchplant" onSubmit={getrenderSearch}>
+        
         <div className="searchOption">
           <label>Search by Name:</label>
           <input onChange={(n) => setName(n.target.value)} />
-      </div>
+        </div>
         <div className="searchOption">
           <label>Search by Maintenance:</label>
           <select
@@ -109,10 +105,13 @@ const FetchPlants = () => {
             <option value="low-light">Happy with shadow</option>
             <option value="partial-sun">Likes a mixture</option>
             <option value="sunlight">Happy with direct sun</option>
-          </select>          
+          </select>
         </div>
-        <input type="reset" value="Reset" onClick={reset}></input>
-        <button type="submit">Submit</button>
+        
+        <div>
+          <button type="reset" onClick={reset}>Reset</button>
+          <button type="submit">Submit</button>
+        </div>
       </form>
       <div className="searchComponents">
         {plantjson.map((item, index) => {
@@ -121,11 +120,11 @@ const FetchPlants = () => {
               item={item}
               index={index}
               key={index}
-              // user={props}
+              user={user}
             />
           );
         })}
-        {page === allPlants }
+        {page === allPlants}
       </div>
     </div>
   );
