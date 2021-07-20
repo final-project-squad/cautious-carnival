@@ -150,24 +150,28 @@ const Header = () => {
                 >
                   Plant Search
                 </div>
-                <div
-                  className="link nabvar-item"
-                  onClick={() => navigatePage(addPlant)}
-                >
-                  Add a Plant
-                </div>
-                <div
-                  className="link nabvar-item"
-                  onClick={() => navigatePage(aboutPage)}
-                >
-                  About
-                </div>
+             
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(userPlant)}
                 >
                   Favourites
                 </div>
+
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(addPlant)}
+                >
+                  Add a Plant
+                </div>
+
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(aboutPage)}
+                >
+                  About
+                </div>
+
                 {loginLogout()}
               </Router>
             </div>
