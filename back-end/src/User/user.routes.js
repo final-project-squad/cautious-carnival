@@ -54,10 +54,7 @@ userRouter.post("/logout", async (req, res) => {
 userRouter.post("/usersPlants", async (req, res) => {
   try {
     const usersPlantsid = await User.findOne({ name: req.body.name });
-    console.log(usersPlantsid.plants);
-
     const userPlants = await Plant.find({ _id: { $in: usersPlantsid.plants } });
-    console.log(userPlants);
     res.status(200).json(userPlants)
   } catch (error) {
     

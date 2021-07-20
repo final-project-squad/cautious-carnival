@@ -3,10 +3,14 @@
 import "./Plant.css"
 // const Plant = ({ item, user }) => {
 const Plant = ({ item }) => {
+
+  const plantingString = '/images/' +item.name.toLowerCase().replace(/ /g,"_")+ '.jpg';
+
     return (
     <div className="fullComponent">
       <div>
-        {<img src="./images/Corn Plant.jpg" alt="plant" />}
+        {/* <img src="./front-end/src/components/Plants/images/abutilon.jpg" alt="plants"></img> */}
+        <img src={plantingString} alt="plant"width="100px" height="100px"></img>
         {/* <img src="./images/"{...item.name} alt="plant" width="100px" height="100px"></img> */}
       </div>
       <div className="componentText">
