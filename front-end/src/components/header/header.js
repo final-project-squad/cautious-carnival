@@ -15,6 +15,7 @@ import UserPlants from "../Plants/UserPlants";
 
 const Header = () => {
   const [user, setUser] = useState("");
+  const [userAdmin, setUserAdmin] = useState(false);
   const [showPop, setShowPop] = useState(false);
   const [showPopReg, setShowPopReg] = useState(false);
   const [page, setPage] = useState();
@@ -28,7 +29,7 @@ const Header = () => {
 
   //run function get user on load
   useEffect(() => {
-    getUser(setUser);
+    getUser(setUser,setUserAdmin);
   }, []);
 
   const navigatePop = () => {
@@ -39,6 +40,7 @@ const Header = () => {
     if (window.confirm("Are you sure you want to log out?") === true) {
       localStorage.removeItem("MyToken");
       setUser();
+      setUserAdmin(false);
       renderMain();
     } else {
     }
@@ -64,7 +66,7 @@ const Header = () => {
   };
 
   const showPopulate = () => {
-    if (user === "Lance") {
+    if (userAdmin) {
       return (
         <div className="link nabvar-item" onClick={() => populate()}>
           populate DB <br />
@@ -101,13 +103,15 @@ const Header = () => {
   const renderPop = () => {
     return (
       <Login
-        setUser={setUser}
+      setUser={setUser}
         name={name}
         email={email}
         password={password}
+        userAdmin={userAdmin}
         setName={setName}
         setEmail={setEmail}
         setPassword={setPassword}
+        setUserAdmin={setUserAdmin}
         setShowPop={setShowPop}
         setShowPopReg={setShowPopReg}
       />
@@ -115,14 +119,16 @@ const Header = () => {
   };
   const renderPopReg = () => {
     return (
-      <Register
+      <Register     
         name={name}
         email={email}
         password={password}
+        userAdmin={userAdmin}
         setName={setName}
         setEmail={setEmail}
         setPassword={setPassword}
         setUser={setUser}
+        setUserAdmin={setUserAdmin}
         setShowPop={setShowPop}
         setShowPopReg={setShowPopReg}
       />

@@ -20,6 +20,7 @@ const Login = (props) => {
     // console.log(data)
     localStorage.setItem("MyToken", data.token);
     props.setUser(data.name);
+    props.setUserAdmin(data.userAdmin)
     props.setShowPop(false);
     props.setShowPopReg(false)
     } else {

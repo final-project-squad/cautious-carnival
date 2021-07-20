@@ -4,7 +4,7 @@ import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 const Register = (props) => {
 
-  const fetchLogin = async (name, email, password) => {
+  const fetchLogin = async (name, email, password, userAdmin) => {
     const response = await fetch("http://localhost:5000/user", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -12,18 +12,20 @@ const Register = (props) => {
         name: name,
         email: email,
         password: password,
+        userAdmin: userAdmin,
       }),
     });
     const data = await response.json();
     localStorage.setItem("MyToken", data.token);
     props.setUser(data.name);
+    props.setUserAdmin(data.userAdmin);
     props.setShowPop(false);    
     props.setShowPopReg(false);
   };
 
   const RegisterUser = (e) => {
     e.preventDefault();
-    fetchLogin(props.name, props.email, props.password);
+    fetchLogin(props.name, props.email, props.password, props.userAdmin);
   };
 
   return (
@@ -54,6 +56,14 @@ const Register = (props) => {
           type="password"
           onChange={(e) => {props.setPassword(e.target.value)}}
           value={props.password}
+        />
+
+        <br />        
+        <label>admin</label>
+        <input          
+          type="checkbox"
+          onChange={(e) => {props.setUserAdmin(e.target.checked)}}
+          value={props.userAdmin}
         />
 
         <br />

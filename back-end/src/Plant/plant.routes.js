@@ -4,7 +4,6 @@ const plantRouter = express.Router();
 
 plantRouter.post("/", async (req, res) => {
   try {
-    console.log("test");
     let plant = new Plant({
       name: req.body.name,
       maintenance: req.body.maintenance,
