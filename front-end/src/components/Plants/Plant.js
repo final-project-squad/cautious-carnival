@@ -1,7 +1,9 @@
-import "./Plant.css"
 
+// import AddPlantToUser from "./addUserPlant";
+import "./Plant.css"
+// const Plant = ({ item, user }) => {
 const Plant = ({ item }) => {
-  return (
+    return (
     <div className="fullComponent">
       <div>
         {<img src="./images/Corn Plant.jpg" alt="plant" />}
@@ -30,6 +32,9 @@ const Plant = ({ item }) => {
           <b>notes:</b> {item.notes}
         </p>
       </div>
+      {/* <div>
+        <AddPlantToUser username={user} plant={item.name}/>
+      </div> */}
       {/* <div>
                 --this should give more details about the plant
                 <button item={item}/>   
