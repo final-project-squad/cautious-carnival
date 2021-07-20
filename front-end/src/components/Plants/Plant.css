@@ -61,7 +61,7 @@
     overflow: hidden;
 }
 
-.form-searchplant button {
+.form-searchplant button{
     margin-left: 50%;
     transform: translate(-50%);
     background-color: rgb(223, 226, 203);

@@ -129,7 +129,7 @@ const Header = () => {
   };
 
   const renderSearch = () => {
-    return <FetchPlants />;
+    return <FetchPlants user={user} />;
   };
 
   const renderUserPlants = () => {
