@@ -39,6 +39,7 @@ const Header = () => {
     if (window.confirm("Are you sure you want to log out?") === true) {
       localStorage.removeItem("MyToken");
       setUser();
+      renderMain();
     } else {
     }
   };
