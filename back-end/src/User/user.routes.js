@@ -111,11 +111,14 @@ userRouter.post("/removeplant", async (req, res) => {
         { name: req.body.username },
         { $pull: { plants: plant._id } }
       );
-      res.status(201).send("added");
     }
+    const usersPlantsid = await User.findOne({ name: req.body.username });
+    const userPlants = await Plant.find({ _id: { $in: usersPlantsid.plants } });
+    res.status(200).json(userPlants);
   } catch (error) {}
 });
 
 module.exports = {
   userRouter,
 };
+

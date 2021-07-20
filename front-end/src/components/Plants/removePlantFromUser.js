@@ -1,7 +1,7 @@
 function RemovePlantFromUser(props) {
   const removePlantFromUser = async (name, plant) => {
     try {
-      await fetch("http://localhost:5000/user/removeplant", {
+      let response = await fetch("http://localhost:5000/user/removeplant", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -10,6 +10,8 @@ function RemovePlantFromUser(props) {
         }),
       });
       alert(name + " you have removed " + plant + "from your favorites")
+      const data = await response.json();
+      props.setPlants(data);
     } catch (error) {}
   };
 

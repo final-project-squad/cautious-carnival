@@ -24,7 +24,7 @@ function UserPlants(props) {
   return (
     <div className="searchComponents">
       {plants.map((item, index) => {
-        return <Plant item={item} index={index} key={index} user= {props.user} addRemove="remove" />;
+        return <Plant item={item} index={index} key={index} user= {props.user} addRemove="remove" setPlants={setPlants}/>;
       })}
     </div>
   );
