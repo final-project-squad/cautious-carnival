@@ -22,7 +22,7 @@ function UserPlants(props) {
   };
 
   return (
-    <div>
+    <div className="searchComponents">
       {plants.map((item, index) => {
         return <Plant item={item} index={index} key={index} />;
       })}

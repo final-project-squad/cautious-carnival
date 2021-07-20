@@ -6,6 +6,12 @@ const Plant = ({ item, user}) => {
 
   const plantingString = '/images/' +item.name.toLowerCase().replace(/ /g,"_")+ '.jpg';
 
+  const showifloggedin = () => {
+    if(user) {
+    return <AddPlantToUser username={user} plant={item.name}/>
+    } 
+  }
+
     return (
     <div className="fullComponent">
       <div>
@@ -37,7 +43,7 @@ const Plant = ({ item, user}) => {
         </p>
       </div>
       <div>
-        <AddPlantToUser username={user} plant={item.name}/>
+      {showifloggedin()}
       </div>
       {/* <div>
                 --this should give more details about the plant

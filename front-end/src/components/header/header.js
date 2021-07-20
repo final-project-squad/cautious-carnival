@@ -73,6 +73,19 @@ const Header = () => {
     }
   };
 
+  const showFavorite = () => {
+    if (user) {
+      return (
+        <div
+          className="link nabvar-item"
+          onClick={() => navigatePage(userPlant)}
+        >
+          Favourites
+        </div>
+      );
+    }
+  };
+
   const populate = async () => {
     if (window.confirm("Are you sure you want to log out?") === true) {
       try {
@@ -144,6 +157,7 @@ const Header = () => {
             <div className="nabvar-links">
               <Router>
                 {showPopulate()}
+                {showFavorite()}
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(plantSearch)}
@@ -162,12 +176,7 @@ const Header = () => {
                 >
                   About
                 </div>
-                <div
-                  className="link nabvar-item"
-                  onClick={() => navigatePage(userPlant)}
-                >
-                  Favourites
-                </div>
+
                 {loginLogout()}
               </Router>
             </div>
