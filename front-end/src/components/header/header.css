@@ -18,13 +18,13 @@
     height: 27vh;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
 }
 
 .nabvar-item {
-    background-color: rgba(235,235,235, 0.6);
+    background-color: rgba(235,235,235, 0.7);
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
