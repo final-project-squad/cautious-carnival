@@ -1,16 +1,26 @@
 
 import AddPlantToUser from "./addPlantToUser";
+import RemovePlantFromUser from "./removePlantFromUser";
 import "./Plant.css"
 // const Plant = ({ item, user }) => {
-const Plant = ({ item, user}) => {
+const Plant = ({ item, user, addRemove}) => {
+  console.log(addRemove)
+  console.log(user)
 
   const plantingString = '/images/' +item.name.toLowerCase().replace(/ /g,"_")+ '.jpg';
 
-  const showifloggedin = () => {
-    if(user) {
+  const showadd = () => {
+    if(user && addRemove==="add") {
     return <AddPlantToUser username={user} plant={item.name}/>
     } 
   }
+
+  const showremove = () => {
+    if(user && addRemove==="remove") {
+    return <RemovePlantFromUser username={user} plant={item.name}/>
+    } 
+  }
+  
 
     return (
     <div className="fullComponent">
@@ -43,7 +53,8 @@ const Plant = ({ item, user}) => {
         </p>
       </div>
       <div>
-      {showifloggedin()}
+      {showadd()}
+      {showremove()}
       </div>
       {/* <div>
                 --this should give more details about the plant

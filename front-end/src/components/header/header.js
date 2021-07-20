@@ -146,7 +146,7 @@ const Header = () => {
   };
 
   const renderUserPlants = () => {
-    return <UserPlants user={user} />;
+    return <UserPlants user={user}/>;
   };
 
   return (
