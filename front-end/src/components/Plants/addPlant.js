@@ -2,7 +2,7 @@ import { useState } from "react";
 import React from "react";
 import Footer from "../footer/footer";
 /* import HighlightOffIcon from "@material-ui/icons/HighlightOff"; */
-import "./addPlant.css"
+import "./addPlant.css";
 
 const AddPlant = () => {
   const [name, setname] = useState();
@@ -38,7 +38,7 @@ const AddPlant = () => {
 
     try {
       const data = await response.json();
-      console.log(data)
+      console.log(data);
     } catch (error) {
       console.log("an error ocoured in front-end login/register");
     }
@@ -62,71 +62,88 @@ const AddPlant = () => {
       {/* <HighlightOffIcon className="close-icon" /> */}
       <form onSubmit={postPLant}>
         <div className="form-addplant">
-
           <div>
             <label>Name</label>
             <input onChange={(e) => setname(e.target.value)} value={name} />
 
             <label>Maintenance</label>
-            <select 
-                value={maintenance}
-                onChange={(e) => setmaintenance(e.target.value) }
-                name="setmaintenance">
-                  <option disabled selected value="">-- Select maintenance --</option>
-                  <option value="Low">Low</option>
-                  <option value="Moderate">Moderate</option>
-                  <option value="High">High</option>
+            <select
+              value={maintenance}
+              onChange={(e) => setmaintenance(e.target.value)}
+              name="setmaintenance"
+            >
+              <option disabled selected value="">
+                -- Select maintenance --
+              </option>
+              <option value="Low">Low</option>
+              <option value="Moderate">Moderate</option>
+              <option value="High">High</option>
             </select>
 
             <label>Lighting</label>
-            <select 
-                value={lighting}
-                onChange={(e) => setlighting(e.target.value) }
-                name="setlighting">
-                  <option disabled selected value="">-- Select lighting --</option>
-                  <option value="low-light">Happy with shadow</option>
-                  <option value="partial-sun">Likes a mixture</option>
-                  <option value="sunlight">Happy with direct sun</option>
+            <select
+              value={lighting}
+              onChange={(e) => setlighting(e.target.value)}
+              name="setlighting"
+            >
+              <option disabled selected value="">
+                -- Select lighting --
+              </option>
+              <option value="low-light">Happy with shadow</option>
+              <option value="partial-sun">Likes a mixture</option>
+              <option value="sunlight">Happy with direct sun</option>
             </select>
-            
+
             <label>Pet-friendly</label>
-            <select 
-                value={petFriendly}
-                onChange={(e) => setpetFriendly(e.target.value) }
-                name="petFriendly">
-                  <option disabled selected value="">-- Select an option --</option>
-                  <option value={true}>Yes</option>
-                  <option value={false}>No</option>
+            <select
+              value={petFriendly}
+              onChange={(e) => setpetFriendly(e.target.value)}
+              name="petFriendly"
+            >
+              <option disabled selected value="">
+                -- Select an option --
+              </option>
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
             </select>
           </div>
-       
+
           <div>
             <label>Watering</label>
-            <select 
-                value={watering}
-                onChange={(e) => setwatering(e.target.value) }
-                name="watering">
-                  <option disabled selected value="">-- Select watering --</option>
-                  <option value="daily">Daily</option>
-                  <option value="weekly">Weekly</option>
-                  <option value="monthly">Monthly</option>
+            <select
+              value={watering}
+              onChange={(e) => setwatering(e.target.value)}
+              name="watering"
+            >
+              <option disabled selected value="">
+                -- Select watering --
+              </option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
             </select>
 
             <label>Indoor</label>
-            <select 
-                value={indoor}
-                onChange={(e) => setindoor(e.target.value) }
-                name="indoor">
-                  <option disabled selected value="">-- Select an option --</option>
-                  <option value={true}>Yes</option>
-                  <option value={false}>No</option>
+            <select
+              value={indoor}
+              onChange={(e) => setindoor(e.target.value)}
+              name="indoor"
+            >
+              <option disabled selected value="">
+                -- Select an option --
+              </option>
+              <option value={true}>Yes</option>
+              <option value={false}>No</option>
             </select>
-            
+
             <label>Notes</label>
-            <textarea onChange={(e) => setnotes(e.target.value)} value={notes} />
+            <textarea
+              onChange={(e) => setnotes(e.target.value)}
+              value={notes}
+            />
           </div>
         </div>
-        
+
         <button type="submit" className="btt-add">
           Add your plant
         </button>

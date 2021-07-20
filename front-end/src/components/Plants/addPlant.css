@@ -1,6 +1,12 @@
+.addplant {
+    background-image: url("./1x/Asset\ 4.png");
+    background-repeat: no-repeat;
+    margin-top:-6px;
+}
+
 .form-addplant {
     z-index: 0;
-    margin-top: 110px;
+    padding-top: 110px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -55,3 +61,4 @@
     background-color: #888d68;
     color: white;
 }
+
