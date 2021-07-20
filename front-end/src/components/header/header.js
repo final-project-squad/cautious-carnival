@@ -51,9 +51,7 @@ const Header = () => {
           <div className="link nabvar-item" onClick={() => logout()}>
             Log Out <br />
           </div>
-          <div className="login-greeting">
-            Hello {user}!
-          </div>
+          <div className="login-greeting">Hello {user}!</div>
         </div>
       );
     } else {
@@ -66,7 +64,7 @@ const Header = () => {
   };
 
   const showPopulate = () => {
-       if (user === "Lance") {
+    if (user === "Lance") {
       return (
         <div className="link nabvar-item" onClick={() => populate()}>
           populate DB <br />
@@ -75,12 +73,13 @@ const Header = () => {
     }
   };
 
-  const populate = async () =>
-  {console.log("test")
-    try {
-    await fetch("http://localhost:5000/populate");
-  } catch (error) {    
-  }  }
+  const populate = async () => {
+    if (window.confirm("Are you sure you want to log out?") === true) {
+      try {
+        await fetch("http://localhost:5000/populate");
+      } catch (error) {}
+    }
+  };
 
   const navigatePage = (nextPage) => {
     setPage(nextPage);
