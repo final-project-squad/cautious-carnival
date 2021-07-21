@@ -39,6 +39,7 @@ const Plant = ({ item, user, addRemove, setPlants }) => {
     return <div></div>
   }
   const renderInfo = () => {
+    console.log(item)
     return (
       <div className="info-pop">
         <HighlightOffIcon
@@ -55,7 +56,10 @@ const Plant = ({ item, user, addRemove, setPlants }) => {
           <b>Watering:</b> {item.watering}
         </p>
         <p>
-          <b>Notes:</b> {item.indoor}
+          <b>Indoor:</b> {item.indoor ? "Yes" : "No"}
+        </p>
+        <p>
+          <b>Notes:</b>
           <div className="scroll-note">
             <p>
               {item.notes}
@@ -74,7 +78,7 @@ const Plant = ({ item, user, addRemove, setPlants }) => {
         </p>
         <div>
          
-          <img src={plantingString} alt="plant"width="100px" height="100px"></img>
+          <img className="plantImage" src={plantingString} alt="plant"width="100px" height="100px"></img>
           
         </div>
         <p>
