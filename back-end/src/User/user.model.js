@@ -23,7 +23,14 @@ const userSchema = new mongoose.Schema({
     },
     plants:{
         type:Array
-    }
+    },
+    todo:[{
+        id:Number,
+        text:String,
+        status:String,
+        datecreated:{ type: Date, default: Date.now },
+    },],
+
 });
 
 userSchema.statics.findByCredentials = async (email,password) =>{
