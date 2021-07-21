@@ -283,7 +283,7 @@ router.get("/", async (req, res) => {
         const plant4 = await Plant.findOne({ name: "Dragon Tree "});
         const plant5 = await Plant.findOne({ name: "Parlor Palm"});
         const userArray = [
-            { name: "Lance", email: "l@book", password:"password", plants: [plant1._id, plant2._id] },
+            { name: "Lance", email: "l@book", password:"password", userAdmin:"true", plants: [plant1._id, plant2._id] },
             { name: "Jeremy", email: "j@eremy",  password:"password",plants: [plant2._id, plant3._id, plant4._id, plant5._id] },
           ];
           return userArray
