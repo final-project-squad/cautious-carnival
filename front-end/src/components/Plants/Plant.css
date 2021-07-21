@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Playfair+Display&display=swap");
 
 .searchComponents {
+  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
