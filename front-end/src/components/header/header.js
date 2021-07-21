@@ -9,7 +9,6 @@ import About from "../about/About";
 import FetchPlants from "../Plants/PlantSearch";
 import UserPlants from "../Plants/UserPlants";
 
-
 const Header = () => {
   const [user, setUser] = useState("");
   const [userAdmin, setUserAdmin] = useState(false);
@@ -26,7 +25,7 @@ const Header = () => {
 
   //run function get user on load
   useEffect(() => {
-    getUser(setUser,setUserAdmin);
+    getUser(setUser, setUserAdmin);
   }, []);
 
   const navigatePop = () => {
@@ -100,7 +99,7 @@ const Header = () => {
   const renderPop = () => {
     return (
       <Login
-      setUser={setUser}
+        setUser={setUser}
         name={name}
         email={email}
         password={password}
@@ -116,7 +115,7 @@ const Header = () => {
   };
   const renderPopReg = () => {
     return (
-      <Register     
+      <Register
         name={name}
         email={email}
         password={password}
@@ -149,7 +148,7 @@ const Header = () => {
   };
 
   const renderUserPlants = () => {
-    return <UserPlants user={user}/>;
+    return <UserPlants user={user} />;
   };
 
   return (
@@ -161,13 +160,16 @@ const Header = () => {
               <Router>
                 {showPopulate()}
                 {showFavorite()}
+                <div className="link nabvar-item" onClick={() => navigatePop()}>
+                  Tasks
+                </div>
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(plantSearch)}
                 >
                   Plant Search
                 </div>
-            
+
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(addPlant)}
@@ -175,32 +177,13 @@ const Header = () => {
                   Add a Plant
                 </div>
 
-    return (<div>
-        <div className={"header"}>
-            <div className={"menu"}>
-                <div className={"navbar"}>
-                    <div className="nabvar-links">
-                        <Router>
-                            <div className="link nabvar-item" onClick={() => navigatePop()}>
-                                Tasks
-                            </div>
-                            <div className="link nabvar-item" onClick={() => navigatePage(plantSearch)}>
-                                Plant Search
-                            </div>
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(aboutPage)}
+                >
+                  About
+                </div>
 
-                            <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
-                                Add a Plant
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
-                                About
-                            </div>
-
-                            <div className="link nabvar-item" onClick={() => navigatePop()}>
-                                Log In
-                            </div>
-                        </Router>
-                    </div>
                 {loginLogout()}
               </Router>
             </div>
