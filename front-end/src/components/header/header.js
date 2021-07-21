@@ -68,11 +68,13 @@ const Header = () => {
   };
 
   const task =() => {
+    if (user) {
     return (
       <div className="link nabvar-item" onClick={() => navigateTask()}>
         Task
       </div>
     );
+    }
   }
 
   const showPopulate = () => {

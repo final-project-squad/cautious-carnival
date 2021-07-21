@@ -46,6 +46,12 @@ const FetchPlants = ({ user }) => {
     setPlantJson(data);
   };
 
+  const renderAll = async () => {
+    const response = await fetch("http://localhost:5000/plant");
+    const data = await response.json();
+    setPlantJson(data);
+  };
+
   const getrenderSearch = (r) => {
     r.preventDefault();
     renderSearch(name, maintenance, petFriendly, lighting);
@@ -58,8 +64,11 @@ const FetchPlants = ({ user }) => {
   return (
     <div className={"plantheading"}>
       <header></header>
-
+      
       <form className="form-searchplant" onSubmit={getrenderSearch}>
+        <div className="buttons-area">
+        <button onClick={renderAll}>View All</button>{" "}
+      </div>
         <div className="form-sp">
           <div className="searchOption">
             <label>Search by Name:</label>
