@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
 
 
@@ -27,7 +28,12 @@ function TodoForm(props) {
     };
 
     return (
+        // <div className="form-login">
         <form className='todo-form' onSubmit={handleSubmit}>
+        {/* <HighlightOffIcon
+          className="close-icon"
+          onClick={() => props.setShowTask(false)}
+        /> */}
         <input
         type='text'
         placeholder='Add a task'
@@ -39,6 +45,7 @@ function TodoForm(props) {
         />
           <button className='to-do-button'>Add a task</button>  
         </form>
+        // </div>
     );
 }
 
