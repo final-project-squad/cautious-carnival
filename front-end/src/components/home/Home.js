@@ -27,12 +27,6 @@ function Home() {
 
             </div>
 
-            <div>
-                <Link className="link login" to="/">
-                    Log in
-                </Link>
-            </div>
-
         </div>
     )
 }
