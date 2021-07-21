@@ -1,48 +1,77 @@
-
 /* to register users*/
+import React from "react";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-import { useState, useEffect } from "react"; 
+// const Register = ({setShowPop},{setUser}) => {
+const Login = (props) => {
 
-const Login = () => {
-    const [name, setname] = useState();
-    const [password, setPassword] = useState();
-    const [email, setemail] = useState();
-    const [result, setResult] = useState([]);
-
-    const fetchLogin = async (name,password,email) => {
-        const response = await fetch("http://localhost:5000/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                name: name,
-                password: password,
-                email: email
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        setResult(data);
+  const fetchLogin = async (name, password) => {
+    const response = await fetch("http://localhost:5000/user/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        password: password,
+      }),
+    });
+    const data = await response.json();
+    // console.log(data.name)
+    if (data != null){
+    // console.log(data)
+    localStorage.setItem("MyToken", data.token);
+    props.setUser(data.name);
+    props.setUserAdmin(data.userAdmin)
+    props.setShowPop(false);
+    props.setShowPopReg(false)
+    } else {
+      alert("Username or password not recognised")
     }
-    
-    const getLogin = (e) => {    
-        e.preventDefault();
-        fetchLogin(name,password,email)
-    }
+  };
 
-    return (
-        <div> 
-         <form onSubmit={getLogin}>
-             <label>name:</label> 
-             <input onChange={(e) => setname(e.target.value)} /><br/>
-             <label>email:</label> 
-             <input onChange={(e) => setemail(e.target.value)} /><br/>
-             <label>password:</label> 
-             <input onChange={(e) => setPassword(e.target.value)} /><br/>
-             <button type="submit">Login</button>
-         </form>
-         {/* <p>{result.map(result => <div>{result.object}, {result.date}</div>)}</p> */}
-         </div>
-      )
-}
+  const checkLogin = (e) => {
+    // alert("this needs to check the login")
+    e.preventDefault();
+    fetchLogin(props.name, props.password);
+  };
+
+  const register = (e) => {
+    props.setShowPopReg(true);
+    // props.setShowPop(false)
+  };
+
+  return (
+    <div className="form-login">
+      <form onSubmit={checkLogin}>
+        <HighlightOffIcon
+          className="close-icon"
+          onClick={() => props.setShowPop(false)}
+        />
+
+        <label>name</label>
+        <input
+          required
+          onChange={(e) => {props.setName(e.target.value)}}
+          value={props.name}
+        />
+        <br />
+        <label>password</label>
+        <input
+          required
+          type="password"
+          onChange={(e) => {props.setPassword(e.target.value)}}
+          value={props.password}
+        />
+
+        <br />
+        <button type="submit" className="btt-login">
+          Login
+        </button>
+      </form>
+      <button onClick={register} className="btt-reg">
+        Register
+      </button>
+    </div>
+  );
+};
 
 export default Login;

@@ -12,6 +12,7 @@ userRouter.post("/", async (req, res) => {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password,
+      userAdmin: req.body.userAdmin,
       token: token,
     });
     user.save();
@@ -22,10 +23,55 @@ userRouter.post("/", async (req, res) => {
   }
 });
 
-userRouter.get("/", async (req, res) => {
+userRouter.post("/login", async (req, res) => {
   try {
-    const user = await User.find({});
+    const token = jwt.sign({ name: req.body.name }, process.env.SECRET);
+    const user = await User.findOne({
+      name: req.body.name,
+      password: req.body.password,
+    });
+    if (user != null) {
+      user.token = token;
+      user.save();
+    }
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).send({ message: "User not found" });
+  }
+});
+
+userRouter.post("/logout", async (req, res) => {
+  try {
+    await User.updateOne(
+      { name: req.body.username },
+      { $pull: { token: req.body.token } }
+    );
+    res.status(201).send("loged out");
+  } catch (error) {
+    res.status(500).send("failed logout");
+  }
+});
+
+userRouter.post("/usersPlants", async (req, res) => {
+  try {
+    const usersPlantsid = await User.findOne({ name: req.body.name });
+    const userPlants = await Plant.find({ _id: { $in: usersPlantsid.plants } });
+    res.status(200).json(userPlants);
+  } catch (error) {}
+});
+
+userRouter.get("/all", async (req, res) => {
+  try {
+    user = await User.find();
     res.status(200).send(user);
+  } catch (error) {
+    res.status(500).send({ message: "User not found" });
+  }
+});
+
+userRouter.get("/", auth, async (req, res) => {
+  try {
+    res.status(200).json(req.user);
   } catch (error) {
     res.status(500).send({ message: "User not found" });
   }
@@ -42,30 +88,38 @@ userRouter.delete("/", async (req, res) => {
 });
 
 userRouter.post("/addplant", async (req, res) => {
-  const plant = await Plant.findOne({ name: req.body.plantname });
-  if (!plant) {
-    res.status(404).send("plant dosn't exsist");
-  } else {
-    await User.updateOne(
-      { name: req.body.username },
-      { $addToSet: { plants: plant._id } }
-    );
-    res.status(201).send("added");
-  }
+  try {
+    const plant = await Plant.findOne({ name: req.body.plantname });
+    if (!plant) {
+      res.status(404).send("plant dosn't exsist");
+    } else {
+      await User.updateOne(
+        { name: req.body.username },
+        { $addToSet: { plants: plant._id } }
+      );
+      res.status(201).send("added");
+    }
+  } catch (error) {}
 });
 
-userRouter.post("/logout", async (req, res) => {
+userRouter.post("/removeplant", async (req, res) => {
   try {
-    await User.updateOne(
-      { name: req.body.username },
-      { $pull: { token: req.body.token } }
-    );
-    res.status(201).send("loged out");
-  } catch (error) {
-    res.status(500).send("failed logout");
-  }
+    const plant = await Plant.findOne({ name: req.body.plantname });
+    if (!plant) {
+      res.status(404).send("plant dosn't exsist");
+    } else {
+      await User.updateOne(
+        { name: req.body.username },
+        { $pull: { plants: plant._id } }
+      );
+    }
+    const usersPlantsid = await User.findOne({ name: req.body.username });
+    const userPlants = await Plant.find({ _id: { $in: usersPlantsid.plants } });
+    res.status(200).json(userPlants);
+  } catch (error) {}
 });
 
 module.exports = {
   userRouter,
 };
+
