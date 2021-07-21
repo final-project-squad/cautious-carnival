@@ -5,9 +5,6 @@ import Plant from "./Plant";
 
 const FetchPlants = () => {
   const allPlants = "all";
-  // const petSearch = "pets";
-  // const maintSearch = "maintenance";
-  // const lightSearch = "lighting";
   const [page, setPage] = useState();
   const [plantjson, setPlantJson] = useState([]);
   const [name, setName] = useState();
@@ -23,17 +20,7 @@ const FetchPlants = () => {
       console.log(err);
     }
   };
-  // const renderPets = async (testing) => {
-  //     const response = await fetch("http://localhost:5000/plant"), {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({
-  //         petFriendly: testing
-  //     })
-  //     }
-  //     const data = await response.json()
-  //     setPlantJson(data);
-  // }
+
   const nameSearch = async (name) => {
     const response = await fetch("http://localhost:5000/plant/search", {
       method: "POST",
@@ -45,7 +32,6 @@ const FetchPlants = () => {
     const data = await response.json();
     console.log(data);
     setPlantJson(data);
-    // console.log(plantjson);
   };
 
   const maintenanceSearch = async (maintenance) => {
@@ -59,7 +45,6 @@ const FetchPlants = () => {
     const data = await response.json();
     console.log(data);
     setPlantJson(data);
-    // console.log(plantjson);
   };
   const petFriendlySearch = async (petFriendly) => {
     const response = await fetch("http://localhost:5000/plant/search", {
@@ -72,7 +57,6 @@ const FetchPlants = () => {
     const data = await response.json();
     console.log(data);
     setPlantJson(data);
-    // console.log(plantjson);
   };
 
   const lightingSearch = async (ligthting) => {
@@ -86,7 +70,6 @@ const FetchPlants = () => {
     const data = await response.json();
     console.log(data);
     setPlantJson(data);
-    // console.log(plantjson);
   };
 
   const getName = (n) => {
@@ -185,7 +168,6 @@ const FetchPlants = () => {
             item={item}
             index={index}
             key={index}
-            // user={props}
         />
         )})}
       {page === allPlants && renderAll}

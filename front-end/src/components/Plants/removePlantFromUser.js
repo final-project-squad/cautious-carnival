@@ -11,7 +11,7 @@ function RemovePlantFromUser(props) {
           plantname: plant,
         }),
       });
-      alert(name + " you have removed " + plant + "from your favorites")
+      alert(plant + " has been removed from your favourites")
       const data = await response.json();
       props.setPlants(data);
     } catch (error) {}
