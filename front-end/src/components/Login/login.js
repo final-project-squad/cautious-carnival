@@ -2,9 +2,7 @@
 import React from "react";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-// const Register = ({setShowPop},{setUser}) => {
 const Login = (props) => {
-
   const fetchLogin = async (name, password) => {
     const response = await fetch("http://localhost:5000/user/login", {
       method: "POST",
@@ -15,28 +13,24 @@ const Login = (props) => {
       }),
     });
     const data = await response.json();
-    // console.log(data.name)
-    if (data != null){
-    // console.log(data)
-    localStorage.setItem("MyToken", data.token);
-    props.setUser(data.name);
-    props.setUserAdmin(data.userAdmin)
-    props.setShowPop(false);
-    props.setShowPopReg(false)
+    if (data != null) {
+      localStorage.setItem("MyToken", data.token);
+      props.setUser(data.name);
+      props.setUserAdmin(data.userAdmin);
+      props.setShowPop(false);
+      props.setShowPopReg(false);
     } else {
-      alert("Username or password not recognised")
+      alert("Username or password not recognised");
     }
   };
 
   const checkLogin = (e) => {
-    // alert("this needs to check the login")
     e.preventDefault();
     fetchLogin(props.name, props.password);
   };
 
   const register = (e) => {
     props.setShowPopReg(true);
-    // props.setShowPop(false)
   };
 
   return (
@@ -50,7 +44,9 @@ const Login = (props) => {
         <label>name</label>
         <input
           required
-          onChange={(e) => {props.setName(e.target.value)}}
+          onChange={(e) => {
+            props.setName(e.target.value);
+          }}
           value={props.name}
         />
         <br />
@@ -58,7 +54,9 @@ const Login = (props) => {
         <input
           required
           type="password"
-          onChange={(e) => {props.setPassword(e.target.value)}}
+          onChange={(e) => {
+            props.setPassword(e.target.value);
+          }}
           value={props.password}
         />
 

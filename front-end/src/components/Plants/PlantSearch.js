@@ -51,10 +51,6 @@ const FetchPlants = ({ user }) => {
     renderSearch(name, maintenance, petFriendly, lighting);
   };
 
-  // const navigatePage = (nextPage) => {
-  //   setPage(nextPage);
-  // };
-
   return (
     <div className={"plantheading"}>
       <header></header>
