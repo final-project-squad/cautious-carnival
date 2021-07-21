@@ -8,11 +8,13 @@ import AddPlant from "../Plants/addPlant";
 import About from "../about/About";
 import FetchPlants from "../Plants/PlantSearch";
 import UserPlants from "../Plants/UserPlants";
+import TodoList from"../todolist/TodoList";
 
 const Header = () => {
   const [user, setUser] = useState("");
   const [userAdmin, setUserAdmin] = useState(false);
   const [showPop, setShowPop] = useState(false);
+  const [showTask, setShowTask] = useState(false);
   const [showPopReg, setShowPopReg] = useState(false);
   const [page, setPage] = useState();
   const userPlant = "userSearch";
@@ -31,6 +33,10 @@ const Header = () => {
   const navigatePop = () => {
     setShowPop(true);
   };
+
+  const navigateTask = () => {
+    setShowTask(true);
+  }
 
   const logout = () => {
     if (window.confirm("Are you sure you want to log out?") === true) {
@@ -60,6 +66,14 @@ const Header = () => {
       );
     }
   };
+
+  const task =() => {
+    return (
+      <div className="link nabvar-item" onClick={() => navigateTask()}>
+        Task
+      </div>
+    );
+  }
 
   const showPopulate = () => {
     if (userAdmin) {
@@ -130,6 +144,13 @@ const Header = () => {
       />
     );
   };
+  const renderTask = () =>{
+    return (
+      <TodoList
+      setShowTask={setShowTask}
+      />
+    )
+  }
 
   const renderMain = () => {
     return <div></div>;
@@ -160,9 +181,7 @@ const Header = () => {
               <Router>
                 {showPopulate()}
                 {showFavorite()}
-                <div className="link nabvar-item" onClick={() => navigatePop()}>
-                  Tasks
-                </div>
+                {task()}
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(plantSearch)}
@@ -195,6 +214,7 @@ const Header = () => {
       </div>
       {showPop ? renderPop() : renderMain()}
       {showPopReg ? renderPopReg() : renderMain()}
+      {showTask ? renderTask() : renderMain()}
       {page === addPlant && renderAddPlant()}
       {page === userPlant && renderUserPlants()}
       {page === aboutPage && renderAbout()}

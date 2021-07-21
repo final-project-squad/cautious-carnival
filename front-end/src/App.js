@@ -23,10 +23,6 @@ function App() {
         <About />
       </Route>
 
-      <Route>
-        <TodoList />
-      </Route>
-
     </Router>
     
   )

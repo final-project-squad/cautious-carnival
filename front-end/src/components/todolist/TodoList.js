@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import TodoForm from './TodoForm'
 import Todo from './Todo';
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 
-
-function TodoList() {
+function TodoList(props) {
     const [todos, setTodos] = useState([]);
 
     const addTodo = todo => {
@@ -46,6 +46,11 @@ function TodoList() {
 
     return (
         <div>
+            <div className="form-login">
+            <HighlightOffIcon
+          className="close-icon"
+          onClick={() => props.setShowTask(false)}
+        />
             <h1>Plan for Plants today</h1>
             <TodoForm onSubmit={addTodo} />
             <Todo 
@@ -53,6 +58,7 @@ function TodoList() {
             completeTodo={completeTodo} 
             removeTodo={removeTodo} 
             updateTodo={updateTodo}/>
+            </div>
         </div>
     )
 }
