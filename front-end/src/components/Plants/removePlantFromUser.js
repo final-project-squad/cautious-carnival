@@ -9,7 +9,7 @@ function RemovePlantFromUser(props) {
           plantname: plant,
         }),
       });
-      alert(name + " you have removed " + plant + "from your favorites")
+      alert(plant + " has been removed from your favourites")
       const data = await response.json();
       props.setPlants(data);
     } catch (error) {}
@@ -17,7 +17,7 @@ function RemovePlantFromUser(props) {
 
   return (
     <div>
-      <button onClick={() => removePlantFromUser(props.username, props.plant)}>
+      <button className="remove-button" onClick={() => removePlantFromUser(props.username, props.plant)}>
         Remove from favourites
       </button>
     </div>
