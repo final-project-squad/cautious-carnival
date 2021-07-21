@@ -13,6 +13,16 @@ const AddPlant = () => {
   const [indoor, setindoor] = useState();
   const [notes, setnotes] = useState();
 
+  const resetForm = () => {
+    setname("")
+    setmaintenance("")
+    setlighting("")
+    setpetFriendly("")
+    setwatering("")
+    setindoor("")
+    setnotes("")
+  }
+
   const fetchLogin = async (
     name,
     maintenance,
@@ -72,7 +82,7 @@ const AddPlant = () => {
               onChange={(e) => setmaintenance(e.target.value)}
               name="setmaintenance"
             >
-              <option disabled selected value="">
+              <option selected value="">
                 -- Select maintenance --
               </option>
               <option value="Low">Low</option>
@@ -86,7 +96,7 @@ const AddPlant = () => {
               onChange={(e) => setlighting(e.target.value)}
               name="setlighting"
             >
-              <option disabled selected value="">
+              <option selected value="">
                 -- Select lighting --
               </option>
               <option value="low-light">Happy with shadow</option>
@@ -100,7 +110,7 @@ const AddPlant = () => {
               onChange={(e) => setpetFriendly(e.target.value)}
               name="petFriendly"
             >
-              <option disabled selected value="">
+              <option selected value="">
                 -- Select an option --
               </option>
               <option value={true}>Yes</option>
@@ -115,7 +125,7 @@ const AddPlant = () => {
               onChange={(e) => setwatering(e.target.value)}
               name="watering"
             >
-              <option disabled selected value="">
+              <option selected value="">
                 -- Select watering --
               </option>
               <option value="daily">Daily</option>
@@ -129,7 +139,7 @@ const AddPlant = () => {
               onChange={(e) => setindoor(e.target.value)}
               name="indoor"
             >
-              <option disabled selected value="">
+              <option selected value="">
                 -- Select an option --
               </option>
               <option value={true}>Yes</option>
@@ -143,10 +153,8 @@ const AddPlant = () => {
             />
           </div>
         </div>
-
-        <button type="submit" className="btt-add">
-          Add your plant
-        </button>
+        <button type="submit" className="btt-add">Add your plant</button>
+        <button type="reset" className="btt-add" onClick={resetForm}>reset</button>
       </form>
 
       <Footer />

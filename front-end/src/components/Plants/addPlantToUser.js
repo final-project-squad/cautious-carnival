@@ -11,7 +11,9 @@ function AddPlantToUser(props) {
           plantname: plant,
         }),
       });
-      alert(plant + " has been added to your favourites")
+     
+        alert(plant + " has been added to your favourites"); 
+  
     } catch (error) {}
   };
 
