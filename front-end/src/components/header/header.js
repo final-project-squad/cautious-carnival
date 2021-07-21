@@ -180,8 +180,16 @@ const Header = () => {
             <div className="nabvar-links">
               <Router>
                 {showPopulate()}
-                {showFavorite()}
+        
                 {task()}
+
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(aboutPage)}
+                >
+                  Home
+                </div>
+
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(plantSearch)}
@@ -196,12 +204,7 @@ const Header = () => {
                   Add a Plant
                 </div>
 
-                <div
-                  className="link nabvar-item"
-                  onClick={() => navigatePage(aboutPage)}
-                >
-                  About
-                </div>
+                {showFavorite()}
 
                 {loginLogout()}
               </Router>
