@@ -59,66 +59,65 @@ const FetchPlants = ({ user }) => {
     <div className={"plantheading"}>
       <header></header>
 
-      
       <form className="form-searchplant" onSubmit={getrenderSearch}>
-      
         <div className="form-sp">
-
-        <div className="searchOption">
-          <label>Search by Name:</label>
-          <input onChange={(n) => setName(n.target.value)} />
-        </div>
-        <div className="searchOption">
-          <label>Search by Maintenance:</label>
-          <select
-            value={maintenance}
-            onChange={(m) => setMaintenance(m.target.value)}
-            name="setMaintenance"
-          >
-            <option selected value="">
-              -- Select maintenance --
-            </option>
-            <option value="Low">Low</option>
-            <option value="Moderate">Moderate</option>
-            <option value="High">High</option>
-          </select>
-        </div>
-        <div className="searchOption">
-          <label>Search for Pet Friendly Plants:</label>
-          <select
-            value={petFriendly}
-            onChange={(e) => setPetFriendly(e.target.value)}
-            name="petFriendly"
-          >
-            <option selected value="">
-              -- Select an option --
-            </option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <div className="searchOption">
-          <label>Search by Light Requirements:</label>
-          <select
-            value={lighting}
-            onChange={(l) => setLighting(l.target.value)}
-            name="setlighting"
-          >
-            <option selected value="">
-              -- Select lighting --
-            </option>
-            <option value="low-light">Happy with shadow</option>
-            <option value="partial-sun">Likes a mixture</option>
-            <option value="sunlight">Happy with direct sun</option>
-          </select>
-        </div>
+          <div className="searchOption">
+            <label>Search by Name:</label>
+            <input onChange={(n) => setName(n.target.value)} />
+          </div>
+          <div className="searchOption">
+            <label>Search by Maintenance:</label>
+            <select
+              value={maintenance}
+              onChange={(m) => setMaintenance(m.target.value)}
+              name="setMaintenance"
+            >
+              <option selected value="">
+                -- Select maintenance --
+              </option>
+              <option value="Low">Low</option>
+              <option value="Moderate">Moderate</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div className="searchOption">
+            <label>Search for Pet Friendly Plants:</label>
+            <select
+              value={petFriendly}
+              onChange={(e) => setPetFriendly(e.target.value)}
+              name="petFriendly"
+            >
+              <option selected value="">
+                -- Select an option --
+              </option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div className="searchOption">
+            <label>Search by Light Requirements:</label>
+            <select
+              value={lighting}
+              onChange={(l) => setLighting(l.target.value)}
+              name="setlighting"
+            >
+              <option selected value="">
+                -- Select lighting --
+              </option>
+              <option value="low-light">Happy with shadow</option>
+              <option value="partial-sun">Likes a mixture</option>
+              <option value="sunlight">Happy with direct sun</option>
+            </select>
+          </div>
         </div>
         <div className="buttons-area">
           <button type="submit">Submit</button>
-          <button type="reset" onClick={reset}>Reset</button>
+          <button type="reset" onClick={reset}>
+            Reset
+          </button>
         </div>
       </form>
-      
+
       <div className="searchComponents">
         {plantjson.map((item, index) => {
           return (
@@ -127,6 +126,7 @@ const FetchPlants = ({ user }) => {
               index={index}
               key={index}
               user={user}
+              addRemove="add"
             />
           );
         })}
