@@ -1,3 +1,5 @@
+import "./addPlantToUser.css";
+
 function RemovePlantFromUser(props) {
   const removePlantFromUser = async (name, plant) => {
     try {
@@ -17,7 +19,7 @@ function RemovePlantFromUser(props) {
 
   return (
     <div>
-      <button onClick={() => removePlantFromUser(props.username, props.plant)}>
+      <button className="remove-button" onClick={() => removePlantFromUser(props.username, props.plant)}>
         Remove from favourites
       </button>
     </div>
