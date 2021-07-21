@@ -3,7 +3,7 @@ import RemovePlantFromUser from "./removePlantFromUser";
 import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import "./Plant.css";
 import { useState } from "react";
-// const Plant = ({ item, user }) => {
+
 const Plant = ({ item, user, addRemove, setPlants }) => {
   console.log(addRemove);
   console.log(user);
@@ -73,10 +73,9 @@ const Plant = ({ item, user, addRemove, setPlants }) => {
           <b>Name:</b> {item.name}{" "}
         </p>
         <div>
-          {/* <img src="./front-end/src/components/Plants/images/abutilon.jpg" alt="plants"></img> */}
+         
           <img src={plantingString} alt="plant"width="100px" height="100px"></img>
-          {/* <img className="plantImage" src="./images/abutilon.jpg" alt="plant" /> */}
-          {/* <img src="./images/"{...item.name} alt="plant" width="100px" height="100px"></img> */}
+          
         </div>
         <p>
           <b>Maintenance Requirements:</b> {item.maintenance}
@@ -88,15 +87,6 @@ const Plant = ({ item, user, addRemove, setPlants }) => {
         {showadd()}
         {showremove()}
       </div>
-      {/* <div>
-                --this should give more details about the plant
-                <button item={item}/>   
-                <p> </p>
-                --this will allow for plant to be added or removed from user list
-                ----if in list reomve if not in list add
-                <Button variant="success" size="sm" key={index} onClick={() => addToUser(item)}>Add To User</Button> 
-                <Button variant="success" size="sm" key={index} onClick={() => RemoveFromUser(item)}>Remove form User</Button> 
-            </div>           */}
     </div>
   );
 };
