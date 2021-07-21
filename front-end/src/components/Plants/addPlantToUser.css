@@ -1,5 +1,4 @@
-.fav-button,
-.remove-button {
+.fav-button, .remove-button {
     margin-left: 50%;
     transform: translate(-50%);
     background-color: rgb(223, 226, 203);
@@ -11,8 +10,8 @@
     margin-top: 20px;
 }
 
-.fav-button:hover,
-.remove-button:hover {
+
+.fav-button:hover, .remove-button:hover {
     background-color: #888d68;
     color: white;
 }

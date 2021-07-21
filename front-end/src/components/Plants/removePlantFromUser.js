@@ -1,3 +1,5 @@
+import "./addPlantToUser.css";
+
 function RemovePlantFromUser(props) {
   const removePlantFromUser = async (name, plant) => {
     try {
