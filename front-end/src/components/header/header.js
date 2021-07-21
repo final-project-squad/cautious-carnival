@@ -16,10 +16,10 @@ const Header = () => {
   const [showPop, setShowPop] = useState(false);
   const [showTask, setShowTask] = useState(false);
   const [showPopReg, setShowPopReg] = useState(false);
-  const [page, setPage] = useState();
   const userPlant = "userSearch";
   const addPlant = "add";
   const aboutPage = "about";
+  const [page, setPage] = useState(aboutPage);
   const plantSearch = "search";
   const [name, setName] = useState();
   const [password, setPassword] = useState();
