@@ -74,8 +74,8 @@ const Plant = ({ item, user, addRemove, setPlants }) => {
         </p>
         <div>
           {/* <img src="./front-end/src/components/Plants/images/abutilon.jpg" alt="plants"></img> */}
-          {/* <img src={plantingString} alt="plant"width="100px" height="100px"></img> */}
-          <img className="plantImage" src="./images/abutilon.jpg" alt="plant" />
+          <img src={plantingString} alt="plant"width="100px" height="100px"></img>
+          {/* <img className="plantImage" src="./images/abutilon.jpg" alt="plant" /> */}
           {/* <img src="./images/"{...item.name} alt="plant" width="100px" height="100px"></img> */}
         </div>
         <p>
