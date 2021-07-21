@@ -175,13 +175,32 @@ const Header = () => {
                   Add a Plant
                 </div>
 
-                <div
-                  className="link nabvar-item"
-                  onClick={() => navigatePage(aboutPage)}
-                >
-                  About
-                </div>
+    return (<div>
+        <div className={"header"}>
+            <div className={"menu"}>
+                <div className={"navbar"}>
+                    <div className="nabvar-links">
+                        <Router>
+                            <div className="link nabvar-item" onClick={() => navigatePop()}>
+                                Tasks
+                            </div>
+                            <div className="link nabvar-item" onClick={() => navigatePage(plantSearch)}>
+                                Plant Search
+                            </div>
 
+                            <div className="link nabvar-item" onClick={() => navigatePage(addPlant)}>
+                                Add a Plant
+                            </div>
+
+                            <div className="link nabvar-item" onClick={() => navigatePage(aboutPage)}>
+                                About
+                            </div>
+
+                            <div className="link nabvar-item" onClick={() => navigatePop()}>
+                                Log In
+                            </div>
+                        </Router>
+                    </div>
                 {loginLogout()}
               </Router>
             </div>
