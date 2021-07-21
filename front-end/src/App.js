@@ -5,6 +5,7 @@ import Main from "./components/main/Main"
 import About from "./components/about/About"
 import "./App.css"
 import TodoList from "./components/todolist/TodoList"
+import Header from "./components/header/header"
 
 function App() {
   
@@ -16,13 +17,8 @@ function App() {
       </Route>
 
       <Route path="/main">
-        <Main />
+        <Header />
       </Route>
-
-      <Route path="/about">
-        <About />
-      </Route>
-
     </Router>
     
   )

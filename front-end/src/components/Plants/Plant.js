@@ -1,70 +1,96 @@
-
 import AddPlantToUser from "./addPlantToUser";
 import RemovePlantFromUser from "./removePlantFromUser";
-import "./Plant.css"
-// const Plant = ({ item, user }) => {
-const Plant = ({ item, user, addRemove, setPlants}) => {
-  console.log(addRemove)
-  console.log(user)
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import "./Plant.css";
+import { useState } from "react";
 
-  const plantingString = '/images/' +item.name.toLowerCase().replace(/ /g,"_")+ '.jpg';
+const Plant = ({ item, user, addRemove, setPlants }) => {
+  console.log(addRemove);
+  console.log(user);
+  const [pop, setPop] = useState(false);
+
+  const plantingString =
+    "/images/" + item.name.toLowerCase().replace(/ /g, "_") + ".jpg";
 
   const showadd = () => {
-    if(user && addRemove==="add") {
-    return <AddPlantToUser username={user} plant={item.name} setPlants={setPlants}/>
-    } 
-  }
+    if (user && addRemove === "add") {
+      return (
+        <AddPlantToUser
+          username={user}
+          plant={item.name}
+          setPlants={setPlants}
+        />
+      );
+    }
+  };
 
   const showremove = () => {
-    if(user && addRemove==="remove") {
-    return <RemovePlantFromUser username={user} plant={item.name} setPlants={setPlants}/>
-    } 
+    if (user && addRemove === "remove") {
+      return (
+        <RemovePlantFromUser
+          username={user}
+          plant={item.name}
+          setPlants={setPlants}
+        />
+      );
+    }
+  };
+  const renderNothing = () => {
+    return <div></div>
   }
-  
-
+  const renderInfo = () => {
+    console.log(item)
     return (
-    <div className="fullComponent">
-      <div>
-        {/* <img src="./front-end/src/components/Plants/images/abutilon.jpg" alt="plants"></img> */}
-        <img src={plantingString} alt="plant"width="100px" height="100px"></img>
-        {/* <img src="./images/"{...item.name} alt="plant" width="100px" height="100px"></img> */}
-      </div>
-      <div className="componentText">
+      <div className="info-pop">
+        <HighlightOffIcon
+          className="info-close-icon"
+          onClick={() => setPop(false)}
+        />
         <p>
+          <b>Lighting:</b> {item.lighting}
+        </p>
+        <p>
+          <b>Pet friendly:</b> {item.petFriendly}{" "}
+        </p>
+        <p>
+          <b>Watering:</b> {item.watering}
+        </p>
+        <p>
+          <b>Indoor:</b> {item.indoor ? "Yes" : "No"}
+        </p>
+        <p>
+          <b>Notes:</b>
+          <div className="scroll-note">
+            <p>
+              {item.notes}
+            </p>
+        </div>
+      </p>
+      </div>
+    );
+  };
+
+  return (
+    <div className="fullComponent">
+      <div className="componentText">
+        <p className="plantName">
           <b>Name:</b> {item.name}{" "}
         </p>
+        <div>
+         
+          <img className="plantImage" src={plantingString} alt="plant"width="100px" height="100px"></img>
+          
+        </div>
         <p>
-          <b>maintenance:</b> {item.maintenance}
-        </p>
-        <p>
-          <b>lighting:</b> {item.lighting}
-        </p>
-        <p>
-          <b>petFriendly:</b> {item.petFriendly}{" "}
-        </p>
-        <p>
-          <b>watering:</b> {item.watering}
-        </p>
-        <p>
-          <b>indoor:</b> {item.indoor}
-        </p>
-        <p>
-          <b>notes:</b> {item.notes}
+          <b>Maintenance Requirements:</b> {item.maintenance}
         </p>
       </div>
       <div>
-      {showadd()}
-      {showremove()}
+        <button className="info-button" onClick={() => setPop(true)}>More Info</button>
+        {pop ? renderInfo() : renderNothing()}
+        {showadd()}
+        {showremove()}
       </div>
-      {/* <div>
-                --this should give more details about the plant
-                <button item={item}/>   
-                <p> </p>
-                --this will allow for plant to be added or removed from user list
-                ----if in list reomve if not in list add
-                <Button variant="success" size="sm" key={index} onClick={() => addToUser(item)}>Add To User</Button> 
-                <Button variant="success" size="sm" key={index} onClick={() => RemoveFromUser(item)}>Remove form User</Button> 
-            </div>           */}
     </div>
   );
 };

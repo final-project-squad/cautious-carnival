@@ -1,5 +1,5 @@
 .addplant {
-    background-image: url("./1x/Asset\ 4.png");
+    background-image: url("./1x/Asset\ 5.png");
     background-position: center;
     background-repeat: no-repeat;
     background-position-y: 3px;
@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 10px;
+    font-weight: bold;
 }
 
 .form-addplant input,

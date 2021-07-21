@@ -1,7 +1,6 @@
 import { useState } from "react";
 import React from "react";
 import Footer from "../footer/footer";
-/* import HighlightOffIcon from "@material-ui/icons/HighlightOff"; */
 import "./addPlant.css";
 
 const AddPlant = () => {
@@ -69,7 +68,6 @@ const AddPlant = () => {
 
   return (
     <div className="addplant">
-      {/* <HighlightOffIcon className="close-icon" /> */}
       <form onSubmit={postPLant}>
         <div className="form-addplant">
           <div>
@@ -139,7 +137,7 @@ const AddPlant = () => {
               onChange={(e) => setindoor(e.target.value)}
               name="indoor"
             >
-              <option selected value="">
+              <option selected value=""> 
                 -- Select an option --
               </option>
               <option value={true}>Yes</option>

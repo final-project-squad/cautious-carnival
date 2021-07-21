@@ -16,10 +16,10 @@ const Header = () => {
   const [showPop, setShowPop] = useState(false);
   const [showTask, setShowTask] = useState(false);
   const [showPopReg, setShowPopReg] = useState(false);
-  const [page, setPage] = useState();
   const userPlant = "userSearch";
   const addPlant = "add";
   const aboutPage = "about";
+  const [page, setPage] = useState(aboutPage);
   const plantSearch = "search";
   const [name, setName] = useState();
   const [password, setPassword] = useState();
@@ -181,8 +181,16 @@ const Header = () => {
             <div className="nabvar-links">
               <Router>
                 {showPopulate()}
-                {showFavorite()}
+        
                 {task()}
+
+                <div
+                  className="link nabvar-item"
+                  onClick={() => navigatePage(aboutPage)}
+                >
+                  Home
+                </div>
+
                 <div
                   className="link nabvar-item"
                   onClick={() => navigatePage(plantSearch)}
@@ -197,12 +205,7 @@ const Header = () => {
                   Add a Plant
                 </div>
 
-                <div
-                  className="link nabvar-item"
-                  onClick={() => navigatePage(aboutPage)}
-                >
-                  About
-                </div>
+                {showFavorite()}
 
                 {loginLogout()}
               </Router>
