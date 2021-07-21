@@ -139,7 +139,7 @@ const AddPlant = () => {
               onChange={(e) => setindoor(e.target.value)}
               name="indoor"
             >
-              <option selected value="">
+              <option selected value=""> 
                 -- Select an option --
               </option>
               <option value={true}>Yes</option>
