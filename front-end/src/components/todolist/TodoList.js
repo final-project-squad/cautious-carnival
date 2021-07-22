@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
-import TodoForm from "./TodoForm";
-import Todo from "./Todo";
+
+import React, {useState} from 'react'
+import TodoForm from './TodoForm'
+import Todo from './Todo';
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import "./Todo.css";
 
 function TodoList(props) {
   const [todos, setTodos] = useState([]);
@@ -84,20 +87,30 @@ function TodoList(props) {
     setTodos(updatedTodos);
   };
 
-  return (
-    <div>
-      <div className="form-login">
-        <h1>Plan for Plants today</h1>
-        <TodoForm onSubmit={addTodo} />
-        <Todo
-          todos={todos}
-          completeTodo={completeTodo}
-          removeTodo={removeTodo}
-          updateTodo={updateTodo}
-        />
-      </div>
-    </div>
-  );
+
+    return (
+        <div>
+            <div className="todo-app">
+                <HighlightOffIcon
+                    className="close-icon"
+                    onClick={() => props.setShowTask(false)}
+                />
+
+                <h1>Plant Planner</h1>
+
+                <TodoForm onSubmit={addTodo} />
+
+                <Todo 
+                todos={todos} 
+                completeTodo={completeTodo} 
+                removeTodo={removeTodo} 
+                updateTodo={updateTodo}
+                />
+                
+            </div>
+        </div>
+    )
+
 }
 
 export default TodoList;
