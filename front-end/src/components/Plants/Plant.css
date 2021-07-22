@@ -26,7 +26,6 @@
   border-top: solid #4f513d;
   border-bottom: solid #4f513d;
   padding-top: 20px;
-  margin-bottom: 65px;
 }
 
 .form-sp {
@@ -35,6 +34,9 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 10px;
+  font-weight: bolder;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .form-searchplant input,
@@ -95,10 +97,25 @@
   margin: 0;
 }
 
-.buttons-area button:last-child {
-  padding: 5px;
-  margin-bottom: 10px;
+.buttons-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.buttons-area button {
+  width: 100px;
+  background-color: rgb(223, 226, 203);
+  border: 1px solid #888d68;
+  color: #5f6343;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
 
 .buttons-area button:hover {
   background-color: #888d68;
@@ -192,4 +209,3 @@
 .scroll-note p::-webkit-scrollbar-thumb:hover {
   background: #888d68;
 }
-
