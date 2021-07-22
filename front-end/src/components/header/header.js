@@ -220,7 +220,7 @@ const Header = () => {
       </div>
       {showPop ? renderPop() : renderMain()}
       {showPopReg ? renderPopReg() : renderMain()}
-      {/* {showTask ? renderTask() : renderMain()} */}
+      {showTask ? renderTask() : renderMain()}
       {page === addPlant && renderAddPlant()}
       {page === userPlant && renderUserPlants()}
       {page === aboutPage && renderAbout()}
