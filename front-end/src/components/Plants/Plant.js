@@ -5,8 +5,7 @@ import "./Plant.css";
 import { useState } from "react";
 
 const Plant = ({ item, user, addRemove, setPlants }) => {
-  console.log(addRemove);
-  console.log(user);
+ 
   const [pop, setPop] = useState(false);
 
   const plantingString =

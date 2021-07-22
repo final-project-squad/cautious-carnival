@@ -1,4 +1,8 @@
+
+import React from 'react';
 import "./addPlantToUser.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function RemovePlantFromUser(props) {
   const removePlantFromUser = async (name, plant) => {
@@ -11,7 +15,8 @@ function RemovePlantFromUser(props) {
           plantname: plant,
         }),
       });
-      alert(plant + " has been removed from your favourites")
+      toast(plant + " has been removed from your favourites")
+      // alert(plant + " has been removed from your favourites")
       const data = await response.json();
       props.setPlants(data);
     } catch (error) {}
@@ -22,6 +27,8 @@ function RemovePlantFromUser(props) {
       <button className="remove-button" onClick={() => removePlantFromUser(props.username, props.plant)}>
         Remove from favourites
       </button>
+      
+      <ToastContainer />
     </div>
   );
 }
