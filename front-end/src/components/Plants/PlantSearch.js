@@ -62,9 +62,9 @@ const FetchPlants = ({ user }) => {
       <header></header>
       
       <form className="form-searchplant" onSubmit={getrenderSearch}>
-        <div className="buttons-area">
-        <button onClick={renderAll}>View All</button>{" "}
-      </div>
+        
+    
+
         <div className="form-sp">
           <div className="searchOption">
             <label>Search by Name:</label>
@@ -115,12 +115,23 @@ const FetchPlants = ({ user }) => {
             </select>
           </div>
         </div>
+
         <div className="buttons-area">
-          <button type="submit">Submit</button>
-          <button type="reset" onClick={reset}>
-            Reset
-          </button>
+
+          <div className="all-btt">
+            <button onClick={renderAll}>View All</button>{" "}
+          </div>
+
+          <div className="sbt-btt">
+            <button type="submit">Submit</button>
+          </div>
+
+          <div className="rst-btt">
+            <button type="reset" onClick={reset}>Reset</button>
+          </div>
+
         </div>
+       
       </form>
 
       <div className="searchComponents">
