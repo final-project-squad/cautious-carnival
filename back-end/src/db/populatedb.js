@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
       },
 
       {
-        name: "Dragon Tree ",
+        name: "Dragon Tree",
         maintenance: "Low",
         lighting: "low-light",
         petFriendly: "no",
@@ -165,7 +165,7 @@ router.get("/", async (req, res) => {
       },
 
       {
-        name: "Abutilon (FLowering Maple) ",
+        name: "Abutilon (FLowering Maple)",
         maintenance: "Low",
         lighting: "sunlight",
         petFriendly: "no",
@@ -220,7 +220,7 @@ router.get("/", async (req, res) => {
       },
 
       {
-        name: "Hydrangea ",
+        name: "Hydrangea",
         maintenance: "Low",
         lighting: "partial-sun",
         petFriendly: "no",
