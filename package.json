@@ -8,7 +8,8 @@
     "server": "npm start --prefix back-end",
     "client": "npm start --prefix front-end",
     "bootstrap": "npm install -d && cd back-end && npm install -d && cd ../front-end && npm install -d",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install --prefix front-end && npm run build --prefix front-end && npm install --prefix back-end && npm run build --prefix back-end"
   },
   "repository": {
     "type": "git",
