@@ -34,9 +34,9 @@ const Header = () => {
     setShowPop(true);
   };
 
-  const navigateTask = () => {
-    setShowTask(true);
-  }
+  // const navigateTask = () => {
+  //   setShowTask(true);
+  // }
 
   const logout = () => {
     if (window.confirm("Are you sure you want to log out?") === true) {
@@ -67,15 +67,15 @@ const Header = () => {
     }
   };
 
-  const task =() => {
-    if (user) {
-    return (
-      <div className="link nabvar-item" onClick={() => navigateTask()}>
-        Task
-      </div>
-    );
-    }
-  }
+  // const task =() => {
+  //   if (user) {
+  //   return (
+  //     <div className="link nabvar-item" onClick={() => navigateTask()}>
+  //       Task
+  //     </div>
+  //   );
+  //   }
+  // }
 
   const showPopulate = () => {
     if (userAdmin) {
@@ -220,7 +220,7 @@ const Header = () => {
       </div>
       {showPop ? renderPop() : renderMain()}
       {showPopReg ? renderPopReg() : renderMain()}
-      {showTask ? renderTask() : renderMain()}
+      {/* {showTask ? renderTask() : renderMain()} */}
       {page === addPlant && renderAddPlant()}
       {page === userPlant && renderUserPlants()}
       {page === aboutPage && renderAbout()}
