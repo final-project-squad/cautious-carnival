@@ -21,12 +21,20 @@ function UserPlants(props) {
     setPlants(data);
   };
 
+  const openTaskManager = () => {
+    props.setShowTask(true);
+  }
+
   return (
+    <div>
+      <div >
+        <button onClick={openTaskManager}>View All</button>{" "}
+      </div>
     <div className="searchComponents">
       {plants.map((item, index) => {
         return <Plant item={item} index={index} key={index} user= {props.user} addRemove="remove" setPlants={setPlants}/>;
       })}
-    </div>
+    </div></div>
   );
 }
 
