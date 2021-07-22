@@ -172,7 +172,7 @@ const Header = () => {
   };
 
   const renderUserPlants = () => {
-    return <UserPlants user={user} />;
+    return <UserPlants user={user} setShowTask={setShowTask} />;
   };
 
   return (
@@ -184,7 +184,7 @@ const Header = () => {
               <Router>
                 {showPopulate()}
         
-                {task()}
+                {/* {task()} */}
 
                 <div
                   className="link nabvar-item"
