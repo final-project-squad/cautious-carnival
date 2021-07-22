@@ -148,6 +148,7 @@ const Header = () => {
     return (
       <TodoList
       setShowTask={setShowTask}
+      username={user}
       />
     )
   }

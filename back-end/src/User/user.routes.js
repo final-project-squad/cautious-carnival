@@ -60,6 +60,8 @@ userRouter.post("/usersPlants", async (req, res) => {
   } catch (error) {}
 });
 
+
+
 userRouter.get("/all", async (req, res) => {
   try {
     user = await User.find();
@@ -101,6 +103,42 @@ userRouter.post("/addplant", async (req, res) => {
     }
   } catch (error) {}
 });
+
+
+userRouter.post("/addtodo", async (req, res) => {
+ try { 
+      await User.updateOne(
+        { name: req.body.username },
+        { $addToSet: { todo: {text:req.body.todo}} }
+      );
+      const tasks = await User.findOne({name: req.body.username }).select('todo');
+    res.status(200).json(tasks);
+   } catch (error) {
+   
+ }
+});
+
+userRouter.post("/gettodo", async (req, res) => {
+  try {
+    const tasks = await User.findOne({name: req.body.username }).select('todo');
+    res.status(200).json(tasks);
+  } catch (error) {
+    res.status(500).send({ message: "User not found" });
+  }
+});
+
+userRouter.post("/removetodo", async (req, res) => {
+  try {
+    
+      await User.updateOne(
+        { name: req.body.username },
+        { $pull: { todo: {_id:req.body.id} } }
+      );
+      const tasks = await User.find({name: req.body.username });
+    res.status(200).json(tasks);
+  } catch (error) {}
+});
+
 
 userRouter.post("/removeplant", async (req, res) => {
   try {
