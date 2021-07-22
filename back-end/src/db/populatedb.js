@@ -280,7 +280,7 @@ router.get("/", async (req, res) => {
         const plant1 = await Plant.findOne({ name: "Peace Lily Plant" });
         const plant2 = await Plant.findOne({ name: "Corn Plant" });
         const plant3 = await Plant.findOne({ name: "Cast Iron Plant" });
-        const plant4 = await Plant.findOne({ name: "Dragon Tree "});
+        const plant4 = await Plant.findOne({ name: "Dragon Tree"});
         const plant5 = await Plant.findOne({ name: "Parlor Palm"});
         const userArray = [
             { name: "Lance", email: "l@book", password:"password", userAdmin:"true", plants: [plant1._id, plant2._id], todo: [{text:"first",status:"Done"},{text:"second",status:"awaiting info"}] },
