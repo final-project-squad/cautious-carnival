@@ -43,7 +43,7 @@ const Header = () => {
       localStorage.removeItem("MyToken");
       setUser();
       setUserAdmin(false);
-      renderMain();
+      navigatePage(aboutPage);
     } else {
     }
   };
